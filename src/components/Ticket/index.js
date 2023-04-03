@@ -8,42 +8,42 @@ import { styWrapper } from './styles';
 function TicketData({ guest, configData }) {
   return (
     <div css={styWrapper}>
-      <div class="container">
-        <div class="ticket">
+      <div className="container">
+        <div className="ticket">
           <div id="qrcode">
             <QRCode value={guest.code} size={250} />
           </div>
         </div>
-        <div class="details">
-          <div class="tinfo">Nama</div>
-          <div class="tdata name">{guest.name}</div>
-          <div class="tinfo">Keterangan</div>
-          <div class="tdata">{guest.desc}</div>
-          <div class="tinfo">Syukuran Pernikahan / Shift</div>
-          <div class="tdata">
+        <div className="details">
+          <div className="tinfo">Nama</div>
+          <div className="tdata name">{guest.name}</div>
+          <div className="tinfo">Keterangan</div>
+          <div className="tdata">{guest.desc}</div>
+          <div className="tinfo">Syukuran Pernikahan / Shift</div>
+          <div className="tdata">
             {`${configData.shiftType?.[guest.shift]} / ${guest.shift}` || '11.00 WIB - 13.00 WIB'}
           </div>
           {/* attendance */}
           {guest.isAttended ? (
             <>
-              <div class="tinfo">Sudah hadir pada</div>
-              <div class="tdata">
-                <span class="badge badge-success">{guest.attendedAt}</span>
+              <div className="tinfo">Sudah hadir pada</div>
+              <div className="tdata">
+                <span className="badge badge-success">{guest.attendedAt}</span>
               </div>
             </>
           ) : null}
           {/** souvenir */}
           {guest.isExchanged ? (
             <>
-              <div class="tinfo">Sudah menukarkan souvenir pada</div>
-              <div class="tdata">
-                <span class="badge badge-success">{guest.exchangedAt}</span>
+              <div className="tinfo">Sudah menukarkan souvenir pada</div>
+              <div className="tdata">
+                <span className="badge badge-success">{guest.exchangedAt}</span>
               </div>
             </>
           ) : null}
           {/* Additional info */}
-          <div class="tinfo">Penting</div>
-          <div class="tdata additional">
+          <div className="tinfo">Penting</div>
+          <div className="tdata additional">
             <ul style={{ paddingLeft: '16px' }}>
               <li>
                 {`Setiap tamu yang hadir wajib menunjukkan QRCode ini sebagai pengganti buku tamu untuk untuk meminimalisir kontak fisik melalui pena.`}

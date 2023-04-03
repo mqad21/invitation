@@ -1,6 +1,8 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
+import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react';
 import { object } from 'prop-types';
 import getQueryValue from '@helpers/getQueryValue';
+import ReactFullpage from '@fullpage/react-fullpage';
 /**
  * List of local components
  */
@@ -31,36 +33,77 @@ function Home({ location }) {
     setShowDetailContent(true);
   };
 
-  const renderDetailContent = () => {
-    if (!showDetailContent) return null;
 
-    return (
-      <Fragment>
-        <HelloSection isInvitation={isInvitation} />
-        <WeddingSection isInvitation={isInvitation} />
-        {isInvitation && <CovidSection />}
-        {isInvitation && <LocationSection />}
-        <StorySection />
-        <PhotoSection />
-        <WishesSection />
-        <ConfirmationSection guestName={firstName} isInvitation={isInvitation} codeLink={finalTicketLink} />
-        <FooterSection isInvitation={isInvitation} />
-      </Fragment>
-    );
-  };
+  // return (
+  //   <MainLayout>
+  //     <Fullpage {...fullPageOptions} />
+  //   </MainLayout>
+  // )
 
   return (
     <MainLayout>
-      <WelcomeSection
-        guestName={guestName}
-        isAnonymGuest={isAnonymGuest}
-        isInvitation={isInvitation}
-        location={location}
-        codeLink={finalTicketLink}
-        onClickDetail={handleClickDetail}
+      <ReactFullpage
+        //fullpage options
+        licenseKey={'YOUR_KEY_HERE'}
+        scrollingSpeed={1000} /* Options here */
+
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              <div className="section">
+                <WelcomeSection
+                  guestName={guestName}
+                  isAnonymGuest={isAnonymGuest}
+                  isInvitation={isInvitation}
+                  location={location}
+                  codeLink={finalTicketLink}
+                  onClickDetail={handleClickDetail}
+                />
+              </div>
+              <div className="section">
+                <HelloSection isInvitation={isInvitation} />
+              </div>
+            </ReactFullpage.Wrapper>
+          );
+        }}
       />
-      {renderDetailContent()}
-      <FloatingMusic />
+    </MainLayout>
+  )
+
+  return (
+    <MainLayout>
+      <ReactFullpage
+        licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
+        scrollingSpeed={1000}
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.wrapper>
+              <div className="section">
+                <WelcomeSection
+                  guestName={guestName}
+                  isAnonymGuest={isAnonymGuest}
+                  isInvitation={isInvitation}
+                  location={location}
+                  codeLink={finalTicketLink}
+                  onClickDetail={handleClickDetail}
+                />
+              </div>
+              <div className="section">
+                <HelloSection isInvitation={isInvitation} />
+              </div>
+              {/* <WeddingSection isInvitation={isInvitation} />
+              {isInvitation && <CovidSection />}
+              {isInvitation && <LocationSection />}
+              <StorySection />
+              <PhotoSection />
+              <WishesSection />
+              <ConfirmationSection guestName={firstName} isInvitation={isInvitation} codeLink={finalTicketLink} />
+              <FooterSection isInvitation={isInvitation} />
+              <FloatingMusic /> */}
+            </ReactFullpage.wrapper>
+          );
+        }}
+      />
     </MainLayout>
   );
 }

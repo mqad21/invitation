@@ -39,17 +39,17 @@ function GenerateLink() {
     if (type === PERSONAL) {
       return (
         <Fragment>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputEmail1">Nama Tamu</label>
             <input
               value={name}
               onChange={handleSetName}
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Nama tamu.."
             ></input>
           </div>
-          <button type="submit" class="btn btn-primary" onClick={() => setShowResult(true)}>
+          <button type="submit" className="btn btn-primary" onClick={() => setShowResult(true)}>
             Generate Link
           </button>
         </Fragment>
@@ -59,13 +59,13 @@ function GenerateLink() {
     if (type === ALL) {
       return (
         <Fragment>
-          <div class="checkbox">
+          <div className="checkbox">
             <label>
               <input type="checkbox" checked={isInvitation} onClick={() => setIsInvitation(!isInvitation)} /> Tipe
               Invitation (Datang offline)
             </label>
           </div>
-          <button type="submit" class="btn btn-primary" onClick={() => setShowResult(true)}>
+          <button type="submit" className="btn btn-primary" onClick={() => setShowResult(true)}>
             Generate Link
           </button>
         </Fragment>
@@ -79,7 +79,7 @@ function GenerateLink() {
     if (type === PERSONAL) {
       return (
         <div className="col-md-4 col-md-offset-4">
-          <div class="alert alert-success" role="alert" style={{ marginTop: '20px' }}>
+          <div className="alert alert-success" role="alert" style={{ marginTop: '20px' }}>
             <strong>Berhasil!</strong> <br />
             <a href={URL} target="_blank" rel="noreferrer" style={{ color: 'green', textDecoration: 'underline' }}>
               {URL}
@@ -100,8 +100,8 @@ function GenerateLink() {
     if (type === ALL) {
       return (
         <div className="col-md-10 col-md-offset-1" style={{ marginTop: '28px' }}>
-          <div class="table-responsive">
-            <table class="table">
+          <div className="table-responsive">
+            <table className="table">
               <thead>
                 <tr>
                   <th>No</th>
@@ -153,9 +153,9 @@ function GenerateLink() {
         <Fragment>
           <div className="row">
             <div className="col-md-4 col-md-offset-4">
-              <div class="form-group">
+              <div className="form-group">
                 <label for="exampleInputEmail1">Tipe Link</label>
-                <select class="form-control" value={type} onChange={handleChange}>
+                <select className="form-control" value={type} onChange={handleChange}>
                   <option value={PERSONAL}>Individu</option>
                   <option value={ALL}>Semua Undangan</option>
                 </select>

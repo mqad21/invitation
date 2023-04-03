@@ -231,26 +231,28 @@ export const styWrapperCount = css`
   width: 100px;
   height: 100px;
   background: rgba(241, 78, 149, 0.8);
-  margin: 8px;
+  margin: 12px;
   border-radius: 50%;
   position: relative;
-  animation: pulse 1s ease infinite;
+  animation: pulse 1.5s ease infinite;
   color: #fff;
 
   h3 {
     font-size: 30px;
     color: #fff;
-    margin: 20px 0 0 0;
+    margin: 0;
+    margin-top: calc(0.8 * 28px)
   }
 
   @media screen and (max-width: 500px) {
-    width: 75px;
-    height: 75px;
-    margin: 4px;
-    font-size: 12px;
+    width: calc(0.8 * 75px);
+    height: calc(0.8 * 75px);
+    margin: calc(0.8 * 8px);
+    font-size: calc(0.8 * 12px);
 
     h3 {
-      font-size: 24px;
+      font-size: calc(0.8 * 24px);
+      margin-top: calc(0.8 * 16px);
     }
   }
 

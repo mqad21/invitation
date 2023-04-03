@@ -30,6 +30,7 @@ body {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+
 .offcanvas #page {
   overflow: hidden;
   position: absolute;
@@ -1025,7 +1026,14 @@ form label {
 }
 
 #fh5co-couple {
-  min-height: 50vh;
+  max-height: 100vh;
+  display: flex;
+  overflow: scroll;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -1910,6 +1918,11 @@ form label {
 
 .main-font {
   font-family: 'Cookie', cursive !important;
+  line-height: .8 !important;
+}
+
+.main-font-salam {
+  margin-bottom: 48px !important;
 }
 
 .and-love {
@@ -1922,7 +1935,7 @@ form label {
 
 @media only screen and (max-width: 400px) {
   .sub-title {
-    font-size: 16px !important;
+    font-size: 24px !important;
     margin: 0 0 8px 0 !important;
   }
 }
