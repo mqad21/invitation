@@ -1,5 +1,5 @@
 import { css, keyframes } from '@emotion/core';
-import Background from '@assets/images/bg-welcome.jpg';
+import Background from '@assets/images/tulip/tulip9.jpeg';
 
 export const styHero = css`
   width: 100%;
@@ -164,7 +164,7 @@ export const styWrapper = css`
     margin-bottom: 0px;
     font-size: 100px;
     line-height: 1.5;
-    font-family: 'Cookie', cursive;
+    font-family: 'valentina', cursive;
     color: #fff;
   }
 
@@ -177,7 +177,7 @@ export const styWrapper = css`
   }
 
   h4 {
-    font-family: 'Cookie', cursive;
+    font-family: 'valentina', cursive;
     margin: 0;
     color: #fff;
     font-size: 30px;
@@ -205,7 +205,7 @@ export const styWrapper = css`
   }
 
   a {
-    color: #f14e95;
+    color: #C3A3A3;
   }
 
   @media screen and (max-width: 330px) {
@@ -230,7 +230,7 @@ export const styWrapperCount = css`
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: rgba(241, 78, 149, 0.8);
+  background: #C3A3A3;
   margin: 12px;
   border-radius: 50%;
   position: relative;
@@ -281,7 +281,7 @@ export const styButtonWrapper = css`
   justify-content: center;
 
   .btn {
-    background: #f14e95;
+    background: #C3A3A3;
     color: #fff;
     border: none;
   }

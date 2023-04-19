@@ -40,10 +40,7 @@ function Home({ location }) {
         //fullpage options
         licenseKey='gplv3-license'
         scrollingSpeed={1000} /* Options here */
-        scrollOverflowReset={true}
-        scrollOverflowResetKey='gplv3-license'
-        dropEffect={true}
-        dropEffectKey={true}
+        scrollOverflow={true}
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
