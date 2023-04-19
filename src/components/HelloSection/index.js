@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { bool } from 'prop-types';
 
-import Bride from '@assets/images/p-dinda-2.jpg';
-import Groom from '@assets/images/p-indra.jpg';
+import Bride from '@assets/images/laila_square.jpg';
+import Groom from '@assets/images/qadri_square.jpg';
 
 import { styWrapper } from './styles';
 
@@ -11,7 +11,7 @@ function HelloSection({ isInvitation }) {
 
   return (
     <Fragment>
-      <div id="fh5co-couple" css={styWrapper}>
+      <div id="fh5co-couple" css={styWrapper} className="fp-overflow">
         <div className="container my-auto">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -52,6 +52,22 @@ function HelloSection({ isInvitation }) {
                   Putra Bapak Muhammad Amin <br />& Ibu Fauziah
                 </p>
               </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
+              <p className="info">
+                <ul>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                  <li>Acara akan dilaksanakan pada hari Sabtu, 24 Juni 2023</li>
+                </ul>
+              </p>
             </div>
           </div>
         </div>

@@ -34,19 +34,16 @@ function Home({ location }) {
   };
 
 
-  // return (
-  //   <MainLayout>
-  //     <Fullpage {...fullPageOptions} />
-  //   </MainLayout>
-  // )
-
   return (
     <MainLayout>
       <ReactFullpage
         //fullpage options
-        licenseKey={'YOUR_KEY_HERE'}
+        licenseKey='gplv3-license'
         scrollingSpeed={1000} /* Options here */
-
+        scrollOverflowReset={true}
+        scrollOverflowResetKey='gplv3-license'
+        dropEffect={true}
+        dropEffectKey={true}
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
@@ -62,6 +59,9 @@ function Home({ location }) {
               </div>
               <div className="section">
                 <HelloSection isInvitation={isInvitation} />
+              </div>
+              <div className="section">
+                <WeddingSection isInvitation={isInvitation} />
               </div>
             </ReactFullpage.Wrapper>
           );

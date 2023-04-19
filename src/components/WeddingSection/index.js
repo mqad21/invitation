@@ -21,7 +21,7 @@ function WeddingSection({ isInvitation }) {
     <Fragment>
       <div id="fh5co-event" css={styWrapper}>
         <div className="overlay" />
-        <div className="container">
+        <div className="container my-auto">
           <div className="row">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <span className="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</span>

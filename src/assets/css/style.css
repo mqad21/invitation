@@ -367,7 +367,12 @@ figure {
     height: 400px;
   }
 }
-
+#fh5co-event {
+  display: flex;
+  float: left;
+  height: 100vh;
+  overflow: auto;
+}
 #fh5co-counter,
 #fh5co-event {
   float: left;
@@ -1026,9 +1031,9 @@ form label {
 }
 
 #fh5co-couple {
-  max-height: 100vh;
+  height: 100vh;
   display: flex;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .my-auto {
