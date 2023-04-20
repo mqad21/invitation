@@ -80,7 +80,7 @@ export const styWrapper = css`
   }
 
   .primary {
-    background: #C3A3A3;
+    background: #FC94AF;
     color: #fff;
     border: none;
   }

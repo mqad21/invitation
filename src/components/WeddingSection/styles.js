@@ -56,7 +56,7 @@ export const styButtonWrapper = css`
     color: #fff;
     font-weight: 500px;
     border-radius: 24px;
-    background: #C3A3A3;
+    background: #FC94AF;
     padding: 8px 16px;
   }
 

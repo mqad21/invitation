@@ -50,7 +50,7 @@ function TicketData({ guest, configData }) {
               </li>
               <li style={{ textTransform: 'uppercase' }}>
                 Dalam rangka mematuhi protokol kesehatan,
-                <span style={{ color: '#C3A3A3', textTransform: 'uppercase' }}>
+                <span style={{ color: '#FC94AF', textTransform: 'uppercase' }}>
                   {` 1 undangan hanya berlaku untuk 2 orang tamu`}
                 </span>
               </li>

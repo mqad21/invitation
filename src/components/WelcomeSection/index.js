@@ -1,27 +1,16 @@
-import React, { Fragment, useState } from 'react';
-import { object, string, bool, func } from 'prop-types';
 import { Link } from 'gatsby';
+import { bool, func, object, string } from 'prop-types';
+import React, { Fragment } from 'react';
 
 import WeddingImg from '@assets/images/wedding-logo.png';
 import CountContainer from './CountContainer';
 import ScrollToDown from './ScrollToDown';
-import { styWrapper, styHero, styBackground, styButtonWrapper } from './styles';
-
-const DELAY_TIME = 1500;
+import { styBackground, styButtonWrapper, styHero, styWrapper } from './styles';
 
 function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, codeLink, onClickDetail }) {
-  const [loading, setLoading] = useState(false);
-  const [alreadyDownloadData, setAlreadyDownloadData] = useState(false);
-
-  const handleScrollTo = () => {
-    /** scroll into detail view */
-    const element = document.getElementById('fh5co-couple');
-    element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-  };
 
   const handleShowDetail = () => {
-    if (loading) return undefined;
-
+    
     try {
       const myAudio = document.getElementById('myAudio');
       myAudio.play();
@@ -30,18 +19,6 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
     }
 
     onClickDetail();
-
-    if (!alreadyDownloadData) {
-      setLoading(true);
-
-      setTimeout(() => {
-        setLoading(false);
-        setAlreadyDownloadData(true);
-        handleScrollTo();
-      }, DELAY_TIME);
-    } else {
-      handleScrollTo();
-    }
   };
 
   const renderGuestSection = () => {
@@ -87,7 +64,7 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
             </div>
           </div>
           <div className="row">
-            <ScrollToDown loading={loading} onClick={handleShowDetail} />
+            <ScrollToDown loading={false} onClick={handleShowDetail} />
           </div>
         </div>
       </header>

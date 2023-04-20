@@ -15,7 +15,7 @@ function HelloSection({ isInvitation }) {
 
         <div className="row">
           <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
-            <h2 className="main-font main-font-salam">Assalamu'a'laikum<br /><small>warahmatullahi wabarakatuh</small></h2>
+            <h2 className="main-font main-font-salam">Assalamu'a'laikum warahmatullahi wabarakatuh</h2>
             <h3 className="sub-title hs">{finalSubtitle}</h3>
             <p className="info">
               Dengan memohon Rahmat dan Ridho Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk

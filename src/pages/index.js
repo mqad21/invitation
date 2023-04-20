@@ -42,6 +42,11 @@ function Home({ location }) {
         scrollingSpeed={1000} /* Options here */
         scrollOverflow={true}
         render={({ state, fullpageApi }) => {
+
+          const handleClickDetail = () => {
+            fullpageApi.moveSectionDown();
+          };
+          
           return (
             <ReactFullpage.Wrapper>
               <div className="section">

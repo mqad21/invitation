@@ -157,7 +157,7 @@ export const styWrapper = css`
 
   img {
     max-width: 80px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
   h1 {
@@ -181,6 +181,7 @@ export const styWrapper = css`
     margin: 0;
     color: #fff;
     font-size: 30px;
+    margin-bottom: 12px;
   }
 
   .getting-married {
@@ -205,7 +206,7 @@ export const styWrapper = css`
   }
 
   a {
-    color: #C3A3A3;
+    color: #FC94AF;
   }
 
   @media screen and (max-width: 330px) {
@@ -230,7 +231,7 @@ export const styWrapperCount = css`
   display: inline-block;
   width: 100px;
   height: 100px;
-  background: #C3A3A3;
+  background: #FC94AF;
   margin: 12px;
   border-radius: 50%;
   position: relative;
@@ -281,7 +282,7 @@ export const styButtonWrapper = css`
   justify-content: center;
 
   .btn {
-    background: #C3A3A3;
+    background: #FC94AF;
     color: #fff;
     border: none;
   }
