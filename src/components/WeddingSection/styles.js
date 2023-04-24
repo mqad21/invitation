@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/bg-wedding.jpg';
+import Background from '@assets/images/bg-wedding-1.jpg';
 
 export const styWrapper = css`
   background-image: url(${Background});
@@ -12,7 +12,10 @@ export const styWrapper = css`
   .bismillah {
     color: #fff !important;
     font-size: 16px !important;
-    font-family: sans-serif;
+    font-family: arabic !important;
+    margin-bottom: 24px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.5px !important;
   }
 
   .sub-title {

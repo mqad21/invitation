@@ -23,6 +23,7 @@ export const styWrapper = css`
   #lq-couple {
     background: url(${Background}) no-repeat center center;
     background-size: cover;
+    min-height: 100vh;
   }
 
   p {

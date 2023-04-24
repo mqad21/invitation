@@ -16,6 +16,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'arabic';
+  src: url('../fonts/Noto_Sans_Arabic/arabic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Cookie&display=swap');
 
 /* =======================================================
@@ -441,6 +448,7 @@ figure {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+
 @media screen and (max-width: 768px) {
   #fh5co-counter .event-wrap,
   #fh5co-event .event-wrap {
@@ -449,13 +457,13 @@ figure {
 }
 #fh5co-counter .event-wrap h3,
 #fh5co-event .event-wrap h3 {
-  font-size: 20px;
+  font-size: 24px;
   color: #fff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   display: block;
   padding-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: .5px;
+  font-family: Valentina, cursive !important;
 }
 #fh5co-counter .event-wrap p,
 #fh5co-counter .event-wrap span,
@@ -1993,12 +2001,13 @@ form label {
     display: block;
     text-align: center;
     font-size: 5em !important;
-    color: rgba(241, 78, 149, 0.8);
+    color: rgba(241, 78, 149, 0.9);
     font-weight: bold;
   }
 
   .main-font__wedding {
     font-size: 32px !important;
+    font-family: Valentina, cursive !important;
   }
 
   .sub-title__wedding {
@@ -2025,4 +2034,12 @@ form label {
 .py-4 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.d-flex {
+  display: flex !important;
 }
