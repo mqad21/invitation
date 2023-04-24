@@ -41,6 +41,7 @@ function Home({ location }) {
         licenseKey='gplv3-license'
         scrollingSpeed={1000} /* Options here */
         scrollOverflow={true}
+        touchSensitivity={1}
         render={({ state, fullpageApi }) => {
 
           const handleClickDetail = () => {

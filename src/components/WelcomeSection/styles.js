@@ -1,5 +1,5 @@
 import { css, keyframes } from '@emotion/core';
-import Background from '@assets/images/tulip/tulip9.jpeg';
+import Background from '@assets/images/couple-1.jpg';
 
 export const styHero = css`
   width: 100%;
@@ -123,12 +123,16 @@ export const styScrollWrapper = css`
 export const styBackground = css`
   background-size: cover;
   background-image: url(${Background});
-  background-position: center;
+  background-position: top center;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    background-position: top;
+  }
 
   @media screen and (max-width: 400px) {
     .title {

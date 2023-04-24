@@ -1,4 +1,5 @@
 import { css } from '@emotion/core';
+import Background from '@assets/images/white-bg-1.jpg';
 
 export const styWrapper = css`
   .sub-title {
@@ -6,6 +7,22 @@ export const styWrapper = css`
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 20px;
+    font-size: 2rem !important;
+  }
+
+  .overlay {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+  }  
+
+  #lq-couple {
+    background: url(${Background}) no-repeat center center;
+    background-size: cover;
   }
 
   p {
@@ -15,7 +32,7 @@ export const styWrapper = css`
 
   @media screen and (max-width: 500px) {
     .sub-title {
-      font-size: 18px;
+      font-size: 16px;
       margin: 0 0 8px 0;
     }
 

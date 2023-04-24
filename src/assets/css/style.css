@@ -334,7 +334,7 @@ figure {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
 }
 .fh5co-cover > .fh5co-container {
   position: relative;
@@ -1945,7 +1945,7 @@ form label {
   font-size: 2.5rem !important;
   color: #D3B565 !important;
   line-height: 1.15 !important;
-  font-family: 'Cursive' !important;
+  font-family: 'Cookie' !important;
 }
 
 .and-love {
@@ -1980,6 +1980,7 @@ form label {
   }
 
   .parent-name {
+    line-height: 1.2 !important;
     margin-top: -16px !important;
   }
 
@@ -1988,6 +1989,7 @@ form label {
   }
 
   .and-love {
+    font-family: 'Valentina' !important;
     display: block;
     text-align: center;
     font-size: 5em !important;
@@ -2020,8 +2022,7 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
-
-.lq-scrollable {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+.py-4 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
