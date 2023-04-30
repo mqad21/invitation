@@ -43,7 +43,7 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
       >
         <div className="overlay"></div>
         <div className="container">
-          <div className="row" css={styWrapper}>
+          <div className="row justify-center" css={styWrapper}>
             <div className="col-md-8 col-md-offset-2 text-center">
               <img src={WeddingImg} alt="wedding-dinda-indra" />
               <h4 className="sub-title">Walimatul 'Urs</h4>
@@ -63,7 +63,7 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
               )}
             </div>
           </div>
-          <div className="row">
+          <div className="row justify-center">
             <ScrollToDown loading={false} onClick={handleShowDetail} />
           </div>
         </div>

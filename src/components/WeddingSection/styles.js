@@ -2,12 +2,16 @@ import { css } from '@emotion/core';
 import Background from '@assets/images/bg-wedding-1.jpg';
 
 export const styWrapper = css`
-  background-image: url(${Background});
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  min-height: 70vh;
-  color: #fff !important;
+
+  #fh5co-event {
+    background-image: url(${Background}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 70vh;
+    color: #fff !important;  
+  }
 
   .bismillah {
     color: #fff !important;
