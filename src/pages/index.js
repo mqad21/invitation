@@ -39,37 +39,40 @@ function Home({ location }) {
       <ReactFullpage
         //fullpage options
         licenseKey='gplv3-license'
-        scrollingSpeed={1000} /* Options here */
+        // scrollingSpeed={1000} /* Options here */
         scrollOverflow={true}
-        touchSensitivity={1}
+        // touchSensitivity={1}
         render={({ state, fullpageApi }) => {
 
           const handleClickDetail = () => {
             fullpageApi.moveSectionDown();
           };
-          
+
           return (
-            <ReactFullpage.Wrapper>
-              <div className="section">
-                <WelcomeSection
-                  guestName={guestName}
-                  isAnonymGuest={isAnonymGuest}
-                  isInvitation={isInvitation}
-                  location={location}
-                  codeLink={finalTicketLink}
-                  onClickDetail={handleClickDetail}
-                />
-              </div>
-              <div className="section">
-                <HelloSection isInvitation={isInvitation} />
-              </div>
-              <div className="section">
-                <WeddingSection isInvitation={isInvitation} />
-              </div>
-            </ReactFullpage.Wrapper>
+            <>
+              <ReactFullpage.Wrapper>
+                <div className="section">
+                  <WelcomeSection
+                    guestName={guestName}
+                    isAnonymGuest={isAnonymGuest}
+                    isInvitation={isInvitation}
+                    location={location}
+                    codeLink={finalTicketLink}
+                    onClickDetail={handleClickDetail}
+                  />
+                </div>
+                <div className="section">
+                  <HelloSection isInvitation={isInvitation} />
+                </div>
+                <div className="section">
+                  <WeddingSection isInvitation={isInvitation} />
+                </div>
+              </ReactFullpage.Wrapper>
+            </>
           );
         }}
       />
+      <FloatingMusic />
     </MainLayout>
   )
 

@@ -6,8 +6,8 @@ export const styWrapper = css`
     color: #828282;
     font-weight: 600;
     letter-spacing: 1px;
-    line-height: 20px;
-    font-size: 2rem !important;
+    line-height: 15px;
+    font-size: 1.25rem !important;
   }
 
   .overlay {
@@ -17,11 +17,11 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.5);
   }  
 
   #lq-couple {
-    background: url(${Background}) no-repeat center center;
+    background-image: url(${Background});
     background-size: cover;
     min-height: 100vh;
   }

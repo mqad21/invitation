@@ -1251,7 +1251,7 @@ form label {
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
-    font-size: 40px;
+    font-size: 40px !important;
   }
 }
 .fh5co-heading p {
@@ -1950,9 +1950,9 @@ form label {
   font-family: 'Abhaya Libre' !important;
 }
 
-.main-font-salam {
+h2.main-font-salam {
   margin-bottom: 24spx !important;
-  font-size: 2.5rem !important;
+  font-size: 1.75rem !important;
   color: #D3B565 !important;
   line-height: 1.15 !important;
   font-family: 'Cookie' !important;

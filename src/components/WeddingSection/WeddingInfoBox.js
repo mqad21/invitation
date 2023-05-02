@@ -6,14 +6,17 @@ function WeddingInfoBox({ title, date, time, description }) {
     <div className="col-md-6 col-sm-6 text-center mb-4">
       <div className="event-wrap">
         <h3>{title}</h3>
-        <div className="event-col">
-          <i className="icon-clock"></i>
-          <span>{time}</span>
-        </div>
+        
         <div className="event-col">
           <i className="icon-calendar"></i>
           <span>{date}</span>
         </div>
+
+        <div className="event-col">
+          <i className="icon-clock"></i>
+          <span>{time}</span>
+        </div>
+      
         {description && (
           <div className="event-col">
             <i className="icon-location-pin"></i>
