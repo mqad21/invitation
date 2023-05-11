@@ -9,7 +9,6 @@ export const styWrapper = css`
     background-size: cover;
     background-position: center;
     width: 100%;
-    min-height: 70vh;
     color: #fff !important;  
   }
 

@@ -1,14 +1,7 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/bg/bg-1.jpg';
+import Background from '@assets/images/bg/bg-5.jpg';
 
 export const styWrapper = css`
-  .sub-title {
-    color: #828282;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 15px;
-    font-size: 1.25rem !important;
-  }
 
   .overlay {
     z-index: 0;
@@ -17,13 +10,14 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.9);
   }  
 
-  #lq-couple {
+  #lq-quran {
     background-image: url(${Background});
     background-size: cover;
     min-height: 100vh;
+    color: #000 !important;
   }
 
   p {
@@ -31,20 +25,28 @@ export const styWrapper = css`
     margin-top: 16px;
   }
 
-  @media screen and (max-width: 500px) {
-    .sub-title {
-      font-size: 16px;
-      margin: 0 0 8px 0;
-    }
+  .info {
+    font-size: 14px;
+    margin-top: 8px;
+  }
 
+  @media screen and (max-width: 500px) {
     p {
       font-size: 16px;
+    }
+
+    .info {
+      font-size: 14px;
     }
   }
 
   @media screen and (max-width: 400px) {
     p {
       font-size: 14px;
+    }
+
+    .info {
+      font-size: 12px;
     }
   }
 `;

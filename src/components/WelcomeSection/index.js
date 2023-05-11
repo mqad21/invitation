@@ -42,7 +42,7 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
         data-stellar-background-ratio="0.5"
       >
         <div className="overlay"></div>
-        <div className="container">
+        <div className="container py-4">
           <div className="row justify-center" css={styWrapper}>
             <div className="col-md-8 col-md-offset-2 text-center">
               <img src={WeddingImg} alt="wedding-dinda-indra" />

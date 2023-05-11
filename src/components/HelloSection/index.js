@@ -13,7 +13,7 @@ function HelloSection({ isInvitation }) {
     <div css={styWrapper}>
       <div id="lq-couple">
         <div className="overlay" />
-        <div className="container d-flex py-4 ">
+        <div className="container min-vh-100 d-flex py-4 ">
           <div className="my-auto">
             <div className="row justify-center">
               <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">

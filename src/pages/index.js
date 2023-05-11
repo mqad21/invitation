@@ -18,6 +18,7 @@ import ConfirmationSection from '@components/ConfirmationSection';
 import FooterSection from '@components/FooterSection';
 import CovidSection from '@components/Covid19';
 import FloatingMusic from '@components/FloatingMusic/Loadable';
+import QuranSection from '../components/QuranSection';
 
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
@@ -37,11 +38,14 @@ function Home({ location }) {
   return (
     <MainLayout>
       <ReactFullpage
-        //fullpage options
         licenseKey='gplv3-license'
-        // scrollingSpeed={1000} /* Options here */
         scrollOverflow={true}
-        // touchSensitivity={1}
+        fitToSectionDelay={5000}
+        fitToSection={true}
+        paddingBottom={100}
+        paddingTop={100}
+        touchSensitivity={5}
+        continuousVertical={true}
         render={({ state, fullpageApi }) => {
 
           const handleClickDetail = () => {
@@ -62,10 +66,28 @@ function Home({ location }) {
                   />
                 </div>
                 <div className="section">
+                  <QuranSection />
+                </div>
+                <div className="section">
                   <HelloSection isInvitation={isInvitation} />
                 </div>
                 <div className="section">
                   <WeddingSection isInvitation={isInvitation} />
+                </div>
+                <div className="section">
+                  <StorySection />
+                </div>
+                <div className="section">
+                  <PhotoSection />
+                </div>
+                <div className="section">
+                  <WishesSection />
+                </div>
+                <div className="section">
+                  <ConfirmationSection guestName={firstName} isInvitation={true} codeLink={finalTicketLink} />
+                </div>
+                <div className="section">
+                  <FooterSection isInvitation={true}/>
                 </div>
               </ReactFullpage.Wrapper>
             </>
@@ -97,15 +119,14 @@ function Home({ location }) {
               <div className="section">
                 <HelloSection isInvitation={isInvitation} />
               </div>
-              {/* <WeddingSection isInvitation={isInvitation} />
-              {isInvitation && <CovidSection />}
-              {isInvitation && <LocationSection />}
+              <WeddingSection isInvitation={isInvitation} />
+              {<CovidSection />}
+              {<LocationSection />}
               <StorySection />
               <PhotoSection />
               <WishesSection />
-              <ConfirmationSection guestName={firstName} isInvitation={isInvitation} codeLink={finalTicketLink} />
-              <FooterSection isInvitation={isInvitation} />
-              <FloatingMusic /> */}
+              <ConfirmationSection guestName={firstName} isInvitation={true} codeLink={finalTicketLink} />
+              <FooterSection isInvitation={true} />
             </ReactFullpage.wrapper>
           );
         }}
