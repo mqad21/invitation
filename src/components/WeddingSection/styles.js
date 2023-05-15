@@ -1,19 +1,28 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/bg-wedding-1.jpg';
+import Background from '@assets/images/bg/bg-7.jpg';
 
 export const styWrapper = css`
 
+  .overlay {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #feeadfac !important;
+  }  
+
   #fh5co-event {
-    background-image: url(${Background}), linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
-    background-blend-mode: multiply;
+    background-image: url(${Background});
     background-size: cover;
     background-position: center;
     width: 100%;
-    color: #fff !important;  
+    color: #3A3B3C !important;  
   }
 
   .bismillah {
-    color: #fff !important;
+    color: #3A3B3C !important;
     font-size: 16px !important;
     font-family: arabic !important;
     margin-bottom: 24px !important;
@@ -22,7 +31,7 @@ export const styWrapper = css`
   }
 
   .sub-title {
-    color: #fff !important;
+    color: #3A3B3C !important;
     font-size: 16px;
     font-family: 'Work Sans', Arial, sans-serif;
     font-weight: 400 !important;
@@ -59,7 +68,7 @@ export const styButtonWrapper = css`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #3A3B3C;
     font-weight: 500px;
     border-radius: 24px;
     background: #FC94AF;

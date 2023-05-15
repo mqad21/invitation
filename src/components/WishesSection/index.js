@@ -5,9 +5,9 @@ function WishesSection() {
   return (
     <div id="fh5co-testimonial">
       <div className="container">
-        <div className="row">
-          <div className="row">
-            <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
+        <div className="row justify-center">
+          <div className="row justify-center">
+            <div className="col-md-8 text-center fh5co-heading">
               <h2 className="main-font">Dari Sahabat</h2>
             </div>
           </div>

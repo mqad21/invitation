@@ -7,7 +7,7 @@ import Groom from '@assets/images/qadri_square.jpg';
 import { styWrapper } from './styles';
 
 function HelloSection({ isInvitation }) {
-  const finalSubtitle = 'Sabtu, 24 Juni 2023';
+  const finalSubtitle = '24 . 06 . 23';
 
   return (
     <div css={styWrapper}>

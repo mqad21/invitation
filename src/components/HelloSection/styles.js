@@ -1,13 +1,13 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/bg/bg-1.jpg';
+import Background from '@assets/images/bg/bg-3.jpg';
 
 export const styWrapper = css`
   .sub-title {
     color: #828282;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 3.5px;
     line-height: 15px;
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
   }
 
   .overlay {
@@ -17,12 +17,13 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
   }  
 
   #lq-couple {
     background-image: url(${Background});
     background-size: cover;
+    background-position: bottom;
     min-height: 100vh;
   }
 

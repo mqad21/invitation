@@ -78,13 +78,7 @@ function Home({ location }) {
                   <StorySection />
                 </div>
                 <div className="section">
-                  <PhotoSection />
-                </div>
-                <div className="section">
                   <WishesSection />
-                </div>
-                <div className="section">
-                  <ConfirmationSection guestName={firstName} isInvitation={true} codeLink={finalTicketLink} />
                 </div>
                 <div className="section">
                   <FooterSection isInvitation={true}/>
