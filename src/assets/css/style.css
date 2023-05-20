@@ -35,7 +35,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
-  color: #828282;
+  color: #3A3B3C;
   background: #fff;
 }
 
@@ -514,7 +514,7 @@ figure {
 
 #fh5co-counter .event-wrap h3,
 #fh5co-event .event-wrap h3 {
-  font-size: 36px;
+  font-size: 32px;
   color: #3A3B3C;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1305,7 +1305,8 @@ form label {
 .couple-half h3 {
   font-family: 'Sacramento', Arial, serif;
   color: #FC94AF;
-  font-size: 30px;
+  font-size: 28px;
+  margin-bottom: 1.4rem !important;
 }
 
 .couple-half .groom,
@@ -1327,6 +1328,10 @@ form label {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  margin-top: 10px !important;
+  z-index: 10 !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 @media screen and (max-width: 480px) {
@@ -1360,11 +1365,13 @@ form label {
 .couple-half .desc-groom {
   padding-right: 180px;
   text-align: right;
+  display: table-row-group !important;
 }
 
 .couple-half .desc-bride {
   padding-left: 180px;
   text-align: left;
+  display: table-row-group !important;
 }
 
 @media screen and (max-width: 480px) {
@@ -1460,7 +1467,7 @@ form label {
 .fh5co-heading p {
   font-size: 18px;
   line-height: 1.5;
-  color: #828282;
+  color: #3A3B3C;
 }
 
 .fh5co-heading span {
@@ -2238,7 +2245,6 @@ form label {
   box-shadow: none;
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 0.1);
-  height: 54px;
   font-size: 18px;
   font-weight: 300;
 }
@@ -2284,7 +2290,7 @@ form label {
 h2.main-font-salam {
   margin-bottom: 24px !important;
   font-size: 1.7rem !important;
-  color: #D3B565 !important;
+  color: #cd6d87 !important;
   line-height: 1.15 !important;
   font-family: 'Cookie' !important;
 }
@@ -2394,4 +2400,34 @@ h2.main-font-salam {
 #fh5co-couple-story .sub-title {
   font-size: 1.2rem !important;
   color: #9b9b9b !important
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glassmorphism::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  z-index: -1;
+  filter: blur(0px);
+  border-radius: 20px;
+}
+
+.glassmorphism p {
+  color: #3A3B3C !important;
+}
+
+.glassmorphism-container {
+  padding: 30px
 }

@@ -23,7 +23,7 @@ export const styWrapper = css`
   }
 
   .details {
-    color: #828282;
+    color: #3A3B3C;
     padding: 16px 0;
     border-top: 1px dashed #c3c3c3;
   }

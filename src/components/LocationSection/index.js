@@ -16,7 +16,7 @@ function LocationSection() {
                   title="Click untuk melihat peta di Google Maps"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: '#828282' }}
+                  style={{ color: '#3A3B3C' }}
                 >
                   <strong>HARRIS Hotel Sentraland Semarang</strong>
                 </a>{' '}

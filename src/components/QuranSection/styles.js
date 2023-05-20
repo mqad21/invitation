@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/bg/bg-7.jpg';
+import Background from '@assets/images/tulip/tulip11.jpg';
 
 export const styWrapper = css`
 
@@ -10,13 +10,13 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
   }  
 
   #lq-quran {
     background-image: url(${Background});
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     min-height: 100vh;
     color: #000 !important;
   }

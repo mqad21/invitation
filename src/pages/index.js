@@ -18,7 +18,8 @@ import ConfirmationSection from '@components/ConfirmationSection';
 import FooterSection from '@components/FooterSection';
 import CovidSection from '@components/Covid19';
 import FloatingMusic from '@components/FloatingMusic/Loadable';
-import QuranSection from '../components/QuranSection';
+import QuranSection from '@components/QuranSection';
+import SendWishesSection from '@components/SendWishesSection';
 
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
@@ -40,11 +41,9 @@ function Home({ location }) {
       <ReactFullpage
         licenseKey='gplv3-license'
         scrollOverflow={true}
-        fitToSectionDelay={5000}
         fitToSection={true}
         paddingBottom={100}
         paddingTop={100}
-        touchSensitivity={5}
         continuousVertical={true}
         render={({ state, fullpageApi }) => {
 
@@ -81,7 +80,12 @@ function Home({ location }) {
                   <WishesSection />
                 </div>
                 <div className="section">
-                  <FooterSection isInvitation={true}/>
+                  <SendWishesSection
+                    guestName={guestName}
+                  />
+                </div>
+                <div className="section">
+                  <FooterSection isInvitation={true} />
                 </div>
               </ReactFullpage.Wrapper>
             </>

@@ -1,24 +1,30 @@
 import React from 'react';
 import WishesContainer from './WishesContainer';
+import SendWishes from './SendWishes';
+import { styWrapper } from './styles';
 
 function WishesSection() {
   return (
-    <div id="fh5co-testimonial">
-      <div className="container">
-        <div className="row justify-center">
-          <div className="row justify-center">
-            <div className="col-md-8 text-center fh5co-heading">
-              <h2 className="main-font">Dari Sahabat</h2>
+    <div css={styWrapper}>
+      <div className="overlay"></div>
+      <div id="fh5co-testimonial">
+        <div className="container min-vh-100 d-flex py-4 ">
+          <div className="row justify-center my-auto">
+            <div className="row justify-center">
+              <div className="col-md-8 text-center fh5co-heading">
+                <h2 className="main-font">Doa & Ucapan</h2>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-md-12">
-              <WishesContainer />
+            <div className="row justify-center">
+              <div className="col-11">
+                <WishesContainer />
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   );
 }
 

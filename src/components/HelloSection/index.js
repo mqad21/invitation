@@ -31,14 +31,16 @@ function HelloSection({ isInvitation }) {
                 <div className="groom">
                   <img src={Bride} alt="groom" className="img-responsive" loading="lazy" />
                 </div>
-                <div className="desc-groom">
-                  <h3 className="main-font">Laila Azzamah Ibda Nafisa</h3>
-                  <p className="parent-name parent-name__top">
-                    Putri Bapak Mutijo & Ibu Wahyu Wijayanti<br />
-                    <small>
-                      <i>RT 01, Kularan, Triharjo, Wates, Kulon Progo, D.I.Yogyakarta</i>
-                    </small>
-                  </p>
+                <div className="desc-groom glassmorphism">
+                  <div className="container p-3">
+                    <h3 className="main-font">Laila Azzamah Ibda Nafisa</h3>
+                    <p className="parent-name parent-name__top">
+                      Putri Bapak Mutijo & Ibu Wahyu Wijayanti<br />
+                      <small>
+                        <i>RT 01, Kularan, Triharjo, Wates, Kulon Progo, D.I.Yogyakarta</i>
+                      </small>
+                    </p>
+                  </div>
                 </div>
               </div>
               <p className="heart text-center">
@@ -51,14 +53,16 @@ function HelloSection({ isInvitation }) {
                 <div className="bride">
                   <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
                 </div>
-                <div className="desc-bride">
-                  <h3 className="main-font">Muhammad Qadri</h3>
-                  <p className="parent-name">
-                    Putra Bapak Muhammad Amin & Ibu Fauziah<br />
-                    <small>
-                      <i>Dusun IX Pasar 4, Marindal I, Patumbak, Deli Serdang, Sumatera Utara</i>
-                    </small>
-                  </p>
+                <div className="desc-bride glassmorphism">
+                  <div className="container p-3">
+                    <h3 className="main-font">Muhammad Qadri</h3>
+                    <p className="parent-name">
+                      Putra Bapak Muhammad Amin & Ibu Fauziah<br />
+                      <small>
+                        <i>Dusun IX Pasar 4, Marindal I, Patumbak, Deli Serdang, Sumatera Utara</i>
+                      </small>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

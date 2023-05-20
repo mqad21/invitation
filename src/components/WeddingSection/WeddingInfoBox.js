@@ -3,8 +3,8 @@ import { string } from 'prop-types';
 
 function WeddingInfoBox({ title, date, time, day, description, link}) {
   return (
-    <div className="col-md-6 col-sm-6 text-center mb-4">
-      <div className="event-wrap">
+    <div className="col-md-6 col-sm-6 text-center mb-4 ">
+      <div className="event-wrap glassmorphism">
         <h3>{title}</h3>
 
         <div className="event-col">

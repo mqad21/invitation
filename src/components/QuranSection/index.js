@@ -7,13 +7,13 @@ function QuranSection() {
 
   return (
     <div css={styWrapper}>
-      <div id="lq-quran">
+      <div id="lq-quran" className="glassmorphism-container">
         <div className="overlay" />
-        <div className="container min-vh-100 d-flex py-4 ">
-          <div className="my-auto">
-          <div className="row justify-center">
+        <div className="container min-vh-100 d-flex py-4">
+          <div className="my-auto w-100 glassmorphism p-4">
+            <div className="row justify-center">
               <div className="col col-auto pb-0">
-                <img src={LQ} alt="lq" width="250"/>
+                <img src={LQ} alt="lq" width="250" />
               </div>
             </div>
             <div className="row justify-center">
