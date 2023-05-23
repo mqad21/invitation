@@ -1,16 +1,25 @@
+import { node } from 'prop-types';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import { node } from 'prop-types';
 
-import Favicon from '@assets/images/LQ.png';
-import '@assets/css/icomoon.css';
 import '@assets/css/bootstrap.css';
+import '@assets/css/icomoon.css';
 import '@assets/css/style.css';
+import Favicon from '@assets/images/LQ.png';
 
 const IMAGE_URL = `lailaqadri.site/static/slide-6-4715e29302dbaa2ba21494c6258298d4.jpg`;
 const META_DESCRIPTION = `Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan. - Dinda & Indra`;
 
 function MainLayout({ children }) {
+
+  React.useEffect(() => {
+    window.addEventListener('resize', () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  }, []);
+
+
   return (
     <Fragment>
       <Helmet>
@@ -37,7 +46,6 @@ function MainLayout({ children }) {
           rel="stylesheet"
           type="text/css"
         />
-        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet"></link>
       </Helmet>
       <div id="page">{children}</div>
     </Fragment>

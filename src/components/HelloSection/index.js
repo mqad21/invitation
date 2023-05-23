@@ -1,16 +1,19 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { bool } from 'prop-types';
 
 import Bride from '@assets/images/laila_square.jpg';
 import Groom from '@assets/images/qadri_square.jpg';
+import getQueryValue from '@helpers/getQueryValue';
 
 import { styWrapper } from './styles';
 
-function HelloSection({ isInvitation }) {
+function HelloSection({ location }) {
   const finalSubtitle = '24 . 06 . 23';
 
+  const showTitle = decodeURIComponent(getQueryValue(location, 't') || '') === '1';
+
   return (
-    <div css={styWrapper}>
+    <div css={styWrapper(showTitle)}>
       <div id="lq-couple">
         <div className="overlay" />
         <div className="container min-vh-100 d-flex py-4 ">
@@ -20,9 +23,7 @@ function HelloSection({ isInvitation }) {
                 <h2 className="main-font main-font-salam">Assalamu'a'laikum warahmatullahi wabarakatuh</h2>
                 <h3 className="sub-title hs">{finalSubtitle}</h3>
                 <p className="info">
-                  Dengan memohon Rahmat dan Ridho Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk
-                  rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan
-                  keberkahan.
+                  Dengan memohon Rahmat dan Ridho Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a restu Bapak/Ibu/Saudara/i agar senantiasa diberikan kelancaran dan keberkahan dalam rangka melangsungkan pernikahan kami:
                 </p>
               </div>
             </div>
@@ -32,15 +33,13 @@ function HelloSection({ isInvitation }) {
                   <img src={Bride} alt="groom" className="img-responsive" loading="lazy" />
                 </div>
                 <div className="desc-groom glassmorphism">
-                  <div className="container p-3">
-                    <h3 className="main-font">Laila Azzamah Ibda Nafisa</h3>
-                    <p className="parent-name parent-name__top">
-                      Putri Bapak Mutijo & Ibu Wahyu Wijayanti<br />
-                      <small>
-                        <i>RT 01, Kularan, Triharjo, Wates, Kulon Progo, D.I.Yogyakarta</i>
-                      </small>
-                    </p>
-                  </div>
+                  <h3 className="main-font">Laila Azzamah Ibda Nafisa<span className="title">, S.Tr.Stat</span></h3>
+                  <p className="parent-name parent-name__top">
+                    Putri Bapak Mutijo<span className="title">, S.Si., M.Si.</span> &<br/>Ibu Wahyu Wijayanti<span className="title">, S.Pd.</span><br />
+                    <small>
+                      <i>Kularan, Triharjo, Wates, Kulon Progo, D.I.Yogyakarta</i>
+                    </small>
+                  </p>
                 </div>
               </div>
               <p className="heart text-center">
@@ -54,15 +53,13 @@ function HelloSection({ isInvitation }) {
                   <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
                 </div>
                 <div className="desc-bride glassmorphism">
-                  <div className="container p-3">
-                    <h3 className="main-font">Muhammad Qadri</h3>
-                    <p className="parent-name">
-                      Putra Bapak Muhammad Amin & Ibu Fauziah<br />
-                      <small>
-                        <i>Dusun IX Pasar 4, Marindal I, Patumbak, Deli Serdang, Sumatera Utara</i>
-                      </small>
-                    </p>
-                  </div>
+                  <h3 className="main-font">Muhammad Qadri<span className="title">, S.Tr.Stat</span></h3>
+                  <p className="parent-name">
+                    Putra Bapak <span className="title">Drs. </span>Muhammad Amin &<br/>Ibu <span className="title">Dra. </span>Fauziah<br />
+                    <small>
+                      <i>Marindal I, Patumbak, Deli Serdang, Sumatera Utara</i>
+                    </small>
+                  </p>
                 </div>
               </div>
             </div>

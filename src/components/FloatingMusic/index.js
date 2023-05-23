@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import IconMusic from '@assets/images/music-icon.png';
 import IconMusicStop from '@assets/images/music-stop-icon.png';
-import MusicBacksound from '@assets/music/lagu-pernikahan-impian.mp3';
+import MusicBacksound from '@assets/music/instrumen-kamu cintanya aku-cutted.mp3';
 
 import { styMusicFloating } from './styles';
 
-function FloatingMusic() {
+function FloatingMusic({ show }) {
   const [play, setPlay] = useState(true);
 
   const toggleMusic = () => {
@@ -25,7 +25,7 @@ function FloatingMusic() {
 
   return (
     <Fragment>
-      <div css={styMusicFloating}>
+      <div css={styMusicFloating} style={{display: show ? 'block' : 'none'}}>
         <audio id="myAudio" loop className="hide">
           <source src={MusicBacksound} type="audio/mpeg" />
           Your browser does not support the audio element.
@@ -40,7 +40,7 @@ function FloatingMusic() {
           />
         </div>
       </div>
-    </Fragment>
+    </Fragment >
   );
 }
 

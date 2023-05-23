@@ -1,26 +1,30 @@
-import React, { Fragment } from 'react';
 import { bool } from 'prop-types';
+import React from 'react';
 
 import WeddingInfoBox from './WeddingInfoBox';
-import ButtonLive from './ButtonLive';
 import { styWrapper } from './styles';
+import getQueryValue from '@helpers/getQueryValue';
 
-function WeddingSection({ isInvitation }) {
-  const renderGuestInfo = () => {
-    return (
-      <Fragment>
-        <div className="col-md-8 col-md-offset-4">
-          <WeddingInfoBox title="Akad Nikah" time="08.00 WIB (Live di Instagram)" date="Sabtu, 03 Oktober 2020" />
-        </div>
-        <ButtonLive />
-      </Fragment>
-    );
-  };
+function WeddingSection({ isInvitation, location }) {
+  const isUnduhMantu = decodeURIComponent(getQueryValue(location, 'u') || '') === '1';
+
+
+  // const renderGuestInfo = () => {
+  //   return (
+  //     <Fragment>
+  //       <div className="col-md-8 col-md-offset-4">
+  //         <WeddingInfoBox title="Akad Nikah" time="08.00 WIB (Live di Instagram)" date="Sabtu, 03 Oktober 2020" />
+  //       </div>
+  //       <ButtonLive />
+  //     </Fragment>
+  //   );
+  // };
+
 
   return (
     <div css={styWrapper}>
       <div id="fh5co-event">
-      <div className="overlay" />
+        <div className="overlay" />
         <div className="container">
           <div className="row justify-center">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -31,24 +35,36 @@ function WeddingSection({ isInvitation }) {
           <div className="row justify-center">
             <div className="col-md-10 col-md-offset-1">
               <div className="row justify-center">
+                {!isUnduhMantu &&
+                  <WeddingInfoBox
+                    title="Akad Nikah"
+                    time="08.00 WIB"
+                    day="Sabtu"
+                    date="24  Juni  2023"
+                    description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
+                    link="https://goo.gl/maps/Htf1ffVCu8mgbXx5A"
+                  />
+                }
+                {!isUnduhMantu &&
+                  <WeddingInfoBox
+                    title="Walimah"
+                    time="11.00 - 13.00 WIB"
+                    day="Sabtu"
+                    date="24  Juni  2023"
+                    description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
+                    link="https://goo.gl/maps/Htf1ffVCu8mgbXx5A"
+                  />
+                }
+                {isUnduhMantu &&
+                  <WeddingInfoBox
+                    title="Akad & Walimah"
+                    day="Sabtu"
+                    date="24  Juni  2023"
+                    description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
+                  />
+                }
                 <WeddingInfoBox
-                  title="Akad"
-                  time="08.00 WIB"
-                  day="Sabtu"
-                  date="24  Juni  2023"
-                  description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
-                  link="https://goo.gl/maps/Htf1ffVCu8mgbXx5A"
-                />
-                <WeddingInfoBox
-                  title="Walimah"
-                  time="11.00 - 13.00 WIB"
-                  day="Sabtu"
-                  date="24  Juni  2023"
-                  description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
-                  link="https://goo.gl/maps/Htf1ffVCu8mgbXx5A"
-                />
-                <WeddingInfoBox
-                  title="Unduh Mantu"
+                  title="Ngunduh Mantu"
                   time="10.00 - 18.00 WIB"
                   day="Sabtu"
                   date="08  Juli  2023"

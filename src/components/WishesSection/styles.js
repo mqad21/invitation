@@ -1,5 +1,5 @@
 import { css, keyframes } from '@emotion/core';
-import Background from '@assets/images/bg/bg-7.jpg';
+import Background from '@assets/images/tulip/tulip13.jpg';
 
 const animation = keyframes`
   0% { right: -300px; opacity: 0;}
@@ -68,8 +68,9 @@ export const styButtonWrapper = css`
   .button-nav {
     font-size: 14px;
     padding: 5px 20px;
+    color: #fff;
     // pink
-    background: #FFC0CB; 
+    background: #FC94AF; 
   }
 `;
 
@@ -80,8 +81,7 @@ export const styWrapper = css`
     background-size: cover;
     background-position: center;
     width: 100%;
-    color: #3A3B3C !important;  
-    min-height: 100vh;
+    color: #3A3B3C !important;
   }
 
   .overlay {
@@ -91,6 +91,6 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.3);
   }  
 `

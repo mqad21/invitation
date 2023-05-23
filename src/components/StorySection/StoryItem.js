@@ -5,7 +5,7 @@ function StoryItem({ image, title, date, description, isInverted }) {
   return (
     <li className={isInverted && `timeline-inverted`}>
       {image && <div className="timeline-badge" style={{ backgroundImage: `url(${image})` }} />}
-      <div className="timeline-panel">
+      <div className="timeline-panel glassmorphism">
         <div className="timeline-heading">
           <h3 className="timeline-title">{title}</h3>
           <span className="date">{date}</span>

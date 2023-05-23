@@ -1,5 +1,4 @@
-import React, { useState, Fragment } from 'react';
-import { Link } from 'gatsby';
+import React, { Fragment, useState } from 'react';
 import { styWrapper } from './styles';
 // import data from '@emoji-mart/data'
 
@@ -83,65 +82,64 @@ function SendWishesSection({ guestName }) {
   return (
     <div css={styWrapper}>
       <div id="fh5co-testimonial">
-        <div className="container">
+        <div className="overlay"></div>
+        <div className="container min-vh-100">
           <div className="row justify-center">
-            <div className="row justify-center">
-              <div className="col-11 text-center fh5co-heading">
-                <p className="sub-title">
-                  Kesan mendalam akan terukir di hati kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan ucapan selamat dan doa restu kepada kami. Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.
-                </p>
-              </div>
+            <div className="col-11 text-center fh5co-heading">
+              <h2 className="main-font">Kirim Doa & Ucapan</h2>
+              <p className="sub-title">
+                Kesan mendalam akan terukir di hati kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan ucapan selamat dan doa restu kepada kami. Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.
+              </p>
             </div>
-            <div className="row justify-center">
-              <div className="col-10">
-                <Fragment>
-                  <form>
-                    <div className="row">
-                      <div className="col-md-4 col-md-offset-4">
-                        <div class="form-group">
-                          <label for="name">Nama</label>
-                          <input
-                            value={name}
-                            onChange={handleSetName}
-                            type="text"
-                            class="form-control"
-                            placeholder={guestName}
-                            required
-                          ></input>
-                        </div>
-                        <div class="form-group">
-                          <label for="infoName">Keterangan</label>
-                          <input
-                            value={infoName}
-                            onChange={handleSetInfoName}
-                            type="text"
-                            class="form-control"
-                            placeholder="misal: Teman Kuliah Laila"
-                            required
-                          ></input>
-                        </div>
-                        <label for="wishes">Pesan</label>
-                        <br></br>
-                        <div class="form-group custom-emoji">
-                          <textarea
-                            value={wishes}
-                            onChange={handleSetWishes}
-                            rows="5"
-                            cols="60"
-                            class="form-control"
-                            placeholder="Pesan dan doa restu untuk kedua mempelai"
-                            required
-                          ></textarea>
-                        </div>
-                        <br></br>
-                        <button type="reset" class="btn btn-primary btn-block" onClick={() => handleWishesData()}>
-                          Kirim
-                        </button>
+          </div>
+          <div className="row justify-center">
+            <div className="col-10 glassmorphism py-4">
+              <Fragment>
+                <form>
+                  <div className="row">
+                    <div className="col">
+                      <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input
+                          value={guestName}
+                          onChange={handleSetName}
+                          type="text"
+                          class="form-control"
+                          required
+                        ></input>
                       </div>
+                      <div class="form-group">
+                        <label for="infoName">Keterangan</label>
+                        <input
+                          value={infoName}
+                          onChange={handleSetInfoName}
+                          type="text"
+                          class="form-control"
+                          placeholder="misal: Teman Kuliah Laila"
+                          required
+                        ></input>
+                      </div>
+                      <label for="wishes">Pesan</label>
+                      <br></br>
+                      <div class="form-group custom-emoji">
+                        <textarea
+                          value={wishes}
+                          onChange={handleSetWishes}
+                          rows="3"
+                          cols="60"
+                          class="form-control"
+                          placeholder="Pesan dan doa restu untuk kedua mempelai"
+                          required
+                        ></textarea>
+                      </div>
+                      <br></br>
+                      <button type="reset" class="btn btn-primary btn-block" onClick={() => handleWishesData()}>
+                        Kirim
+                      </button>
                     </div>
-                  </form>
-                </Fragment>
-              </div>
+                  </div>
+                </form>
+              </Fragment>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ function WishesItem({ image, name, infoName, description, isActive }) {
 
   const renderItem = () => {
     return (
-      <div className="item" css={styWrapperItem}>
+      <div className="item glassmorphism pt-4" css={styWrapperItem}>
         <div className={`testimony-slide text-center ${isActive ? 'active' : 'hide'}`}>
           <h4>{name}</h4>
           <span className="infoName">{infoName}</span>

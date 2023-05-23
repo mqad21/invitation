@@ -254,7 +254,7 @@ figure {
 }
 
 .fh5co-nav ul li.btn-cta a {
-  color: #FC94AF;
+  color: #f77497;
 }
 
 .fh5co-nav ul li.btn-cta a span {
@@ -472,7 +472,6 @@ figure {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  background: #feeadfac !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -560,7 +559,7 @@ figure {
 #fh5co-event .event-wrap .event-col .date {
   font-size: 20px !important;
   font-weight: 400 !important;
-  color: #85743e;
+  color: #f77497 !important;
   letter-spacing: 2.5px;
   text-transform: none;
   margin-bottom: 0;
@@ -593,7 +592,7 @@ figure {
 }
 
 #fh5co-event .event-wrap .event-col .place small {
-  color: #85743e;
+  color: #f77497;
   letter-spacing: normal;
   font-weight: 100 !important;
 }
@@ -661,6 +660,7 @@ figure {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
+  box-shadow: none;
 }
 
 .timeline>li>.timeline-panel:before {
@@ -669,8 +669,8 @@ figure {
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid #ccc;
-  border-right: 0 solid #ccc;
+  border-left: 14px solid rgba(255, 255, 255, 0.5);
+  border-right: 0 solid rgba(255, 255, 255, 0.5);
   border-bottom: 15px solid transparent;
   content: ' ';
 }
@@ -681,8 +681,8 @@ figure {
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid rgba(255, 255, 255, 0.5);
+  border-right: 0 solid rgba(255, 255, 255, 0.5);
   border-bottom: 14px solid transparent;
   content: ' ';
 }
@@ -752,14 +752,18 @@ figure {
 
 .timeline-title {
   margin-top: 0;
+  font-size: 1.7rem;
+  font-family: 'valentina' !important;
+  color: #3A3B3C;
+  margin-bottom: 10px;
 }
 
-.date {
+.timeline-panel .date {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 13px;
-  text-transform: uppercase;
   letter-spacing: 2px;
+  color: #f77497 !important
 }
 
 .timeline-body>p,
@@ -1254,9 +1258,13 @@ form label {
 }
 
 .couple-wrap {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
+}
+
+.couple-wrap .main-font {
+  line-height: 1.2 !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -1363,15 +1371,19 @@ form label {
 }
 
 .couple-half .desc-groom {
-  padding-right: 180px;
   text-align: right;
-  display: table-row-group !important;
+  display: flow-root !important;
+  min-height: 195px;
 }
 
 .couple-half .desc-bride {
-  padding-left: 180px;
   text-align: left;
-  display: table-row-group !important;
+  display: flow-root !important;
+  min-height: 195px;
+}
+
+.desc-groom, .desc-bride {
+  padding: 18px !important;
 }
 
 @media screen and (max-width: 480px) {
@@ -1462,6 +1474,15 @@ form label {
   .fh5co-heading h2 {
     font-size: 40px !important;
   }
+
+  .couple-half .desc-groom {
+    min-height: unset !important;
+  }
+
+  .couple-half .desc-bride {
+    min-height: unset !important;
+  }
+
 }
 
 .fh5co-heading p {
@@ -2057,9 +2078,9 @@ form label {
 }
 
 .btn-gold {
-  background: #85743e;
+  background: #fc94af;
   color: #fff;
-  border: 2px solid #85743e;
+  border: 2px solid #fc94af;
 }
 
 .btn-gold:hover,
@@ -2070,19 +2091,19 @@ form label {
 }
 
 .btn-gold.btn-outline span {
-  color: #85743e !important;
+  color: #fc94af !important;
 }
 
 .btn-gold.btn-outline {
   background: transparent;
-  color: #85743e;
-  border: 2px solid #85743e;
+  color: #fc94af;
+  border: 2px solid #fc94af;
 }
 
 .btn-gold.btn-outline:hover,
 .btn-gold.btn-outline:focus,
 .btn-gold.btn-outline:active {
-  background: #85743e;
+  background: #fc94af;
   color: #fff;
 }
 
@@ -2171,9 +2192,9 @@ form label {
 }
 
 .btn-danger {
-  background: #d9534f;
+  background: #fc94af;
   color: #fff;
-  border: 2px solid #d9534f;
+  border: 2px solid #fc94af;
 }
 
 .btn-danger:hover,
@@ -2185,14 +2206,14 @@ form label {
 
 .btn-danger.btn-outline {
   background: transparent;
-  color: #d9534f;
-  border: 2px solid #d9534f;
+  color: #fc94af;
+  border: 2px solid #fc94af;
 }
 
 .btn-danger.btn-outline:hover,
 .btn-danger.btn-outline:focus,
 .btn-danger.btn-outline:active {
-  background: #d9534f;
+  background: #fc94af;
   color: #fff;
 }
 
@@ -2290,7 +2311,7 @@ form label {
 h2.main-font-salam {
   margin-bottom: 24px !important;
   font-size: 1.7rem !important;
-  color: #cd6d87 !important;
+  color: #f77497 !important;
   line-height: 1.15 !important;
   font-family: 'Cookie' !important;
 }
@@ -2329,6 +2350,7 @@ h2.main-font-salam {
   .parent-name {
     line-height: 1.2 !important;
     margin-top: -16px !important;
+    margin-bottom: 0 !important;
   }
 
   .parent-name__top {
@@ -2378,6 +2400,7 @@ h2.main-font-salam {
 
 .min-vh-100 {
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .d-flex {
@@ -2399,35 +2422,40 @@ h2.main-font-salam {
 
 #fh5co-couple-story .sub-title {
   font-size: 1.2rem !important;
-  color: #9b9b9b !important
+  color: #3A3B3C !important
 }
 
 .glassmorphism {
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+  border-radius: 16px !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.glassmorphism::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background-color: rgba(255, 255, 255, 0.15);
-  z-index: -1;
-  filter: blur(0px);
-  border-radius: 20px;
-}
-
 .glassmorphism p {
   color: #3A3B3C !important;
 }
 
-.glassmorphism-container {
-  padding: 30px
+.btn-gift {
+  font-size: 12px !important;
+  color: #fff !important;
+}
+
+.account h3 {
+  font-size: 16px;
+  margin-bottom: 0.4rem;
+}
+
+.account p {
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+.btn-copy {
+  font-size: 12px !important;
+  padding: 4px 8px;
+  font-weight: bold;
+  /* background-color: #fff !important; */
 }

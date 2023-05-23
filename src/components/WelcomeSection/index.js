@@ -7,17 +7,19 @@ import CountContainer from './CountContainer';
 import ScrollToDown from './ScrollToDown';
 import { styBackground, styButtonWrapper, styHero, styWrapper } from './styles';
 
-function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, codeLink, onClickDetail }) {
+function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailContent }) {
 
-  const handleShowDetail = () => {
-    
+  const playAudio = () => {
     try {
       const myAudio = document.getElementById('myAudio');
       myAudio.play();
     } catch {
       console.error('FAILED_TO_PLAY_MUSIC');
     }
+  }
 
+  const handleShowDetail = () => {
+    playAudio();
     onClickDetail();
   };
 
@@ -26,13 +28,14 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
 
     return (
       <Fragment>
-        <h3 className="to-dearest">Yth.</h3>
+        <h3 className="to-dearest">Yth. Bapak/Ibu/Saudara/i</h3>
         <h2 className="to-dearest-name">{guestName}</h2>
       </Fragment>
     );
   };
 
   return (
+
     <div css={styHero}>
       <header
         id="fh5co-header"
@@ -52,20 +55,11 @@ function WelcomeSection({ location, guestName, isInvitation, isAnonymGuest, code
                 <CountContainer />
               </div>
               {renderGuestSection()}
-              {isInvitation && (
-                <div className="row" css={styButtonWrapper}>
-                  <div className="col-md-3">
-                    <Link to={`/e-ticket?${codeLink}`}>
-                      <button className="btn btn-default btn-block">Lihat e-Ticket</button>
-                    </Link>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
-          <div className="row justify-center">
+          {!showDetailContent && <div className="row justify-center">
             <ScrollToDown loading={false} onClick={handleShowDetail} />
-          </div>
+          </div>}
         </div>
       </header>
     </div>

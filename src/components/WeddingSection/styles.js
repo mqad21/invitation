@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/bg/bg-7.jpg';
+import Background from '@assets/images/tulip/tulip14.jpg';
 
 export const styWrapper = css`
 
@@ -10,7 +10,7 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: #feeadfac !important;
+    background: rgba(255, 255, 255, 0.6) !important;
   }  
 
   #fh5co-event {

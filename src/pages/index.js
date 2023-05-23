@@ -1,28 +1,25 @@
-import React, { useState, Fragment, useEffect } from 'react';
-import { Fullpage, Slide, HorizontalSlider } from 'fullpage-react';
-import { object } from 'prop-types';
-import getQueryValue from '@helpers/getQueryValue';
 import ReactFullpage from '@fullpage/react-fullpage';
+import getQueryValue from '@helpers/getQueryValue';
+import { object } from 'prop-types';
+import React, { useState } from 'react';
 /**
  * List of local components
  */
-import MainLayout from '@components/Layout';
-import WelcomeSection from '@components/WelcomeSection';
-import HelloSection from '@components/HelloSection';
-import WeddingSection from '@components/WeddingSection';
-import LocationSection from '@components/LocationSection';
-import StorySection from '@components/StorySection';
-import PhotoSection from '@components/PhotoSection/Loadable';
-import WishesSection from '@components/WishesSection';
-import ConfirmationSection from '@components/ConfirmationSection';
-import FooterSection from '@components/FooterSection';
-import CovidSection from '@components/Covid19';
 import FloatingMusic from '@components/FloatingMusic/Loadable';
+import FooterSection from '@components/FooterSection';
+import HelloSection from '@components/HelloSection';
+import MainLayout from '@components/Layout';
 import QuranSection from '@components/QuranSection';
 import SendWishesSection from '@components/SendWishesSection';
+import StorySection from '@components/StorySection';
+import WeddingSection from '@components/WeddingSection';
+import WelcomeSection from '@components/WelcomeSection';
+import WishesSection from '@components/WishesSection';
+import GiftSection from '@/components/GiftSection';
 
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
+  const hideGift = decodeURIComponent(getQueryValue(location, 'g') || '') === '0';
   const isInvitation = getQueryValue(location, 'type') === 'invitation';
   const firstName = guestName.replace(/ .*/, '');
   const isAnonymGuest = guestName === '' && !isInvitation;
@@ -30,10 +27,6 @@ function Home({ location }) {
   const finalTicketLink = `code=${codeLink}&name=${guestName}`;
 
   const [showDetailContent, setShowDetailContent] = useState(false);
-
-  const handleClickDetail = () => {
-    setShowDetailContent(true);
-  };
 
 
   return (
@@ -45,65 +38,22 @@ function Home({ location }) {
         paddingBottom={100}
         paddingTop={100}
         continuousVertical={true}
+        normalScrollElements=".normal-scroll"
         render={({ state, fullpageApi }) => {
+
+          if (fullpageApi && !showDetailContent) {
+            fullpageApi.setAllowScrolling(false);
+          }
 
           const handleClickDetail = () => {
+            setShowDetailContent(true);
             fullpageApi.moveSectionDown();
+            fullpageApi.setAllowScrolling(true);
           };
 
-          return (
-            <>
-              <ReactFullpage.Wrapper>
-                <div className="section">
-                  <WelcomeSection
-                    guestName={guestName}
-                    isAnonymGuest={isAnonymGuest}
-                    isInvitation={isInvitation}
-                    location={location}
-                    codeLink={finalTicketLink}
-                    onClickDetail={handleClickDetail}
-                  />
-                </div>
-                <div className="section">
-                  <QuranSection />
-                </div>
-                <div className="section">
-                  <HelloSection isInvitation={isInvitation} />
-                </div>
-                <div className="section">
-                  <WeddingSection isInvitation={isInvitation} />
-                </div>
-                <div className="section">
-                  <StorySection />
-                </div>
-                <div className="section">
-                  <WishesSection />
-                </div>
-                <div className="section">
-                  <SendWishesSection
-                    guestName={guestName}
-                  />
-                </div>
-                <div className="section">
-                  <FooterSection isInvitation={true} />
-                </div>
-              </ReactFullpage.Wrapper>
-            </>
-          );
-        }}
-      />
-      <FloatingMusic />
-    </MainLayout>
-  )
 
-  return (
-    <MainLayout>
-      <ReactFullpage
-        licenseKey='OPEN-SOURCE-GPLV3-LICENSE'
-        scrollingSpeed={1000}
-        render={({ state, fullpageApi }) => {
           return (
-            <ReactFullpage.wrapper>
+            <ReactFullpage.Wrapper>
               <div className="section">
                 <WelcomeSection
                   guestName={guestName}
@@ -112,25 +62,46 @@ function Home({ location }) {
                   location={location}
                   codeLink={finalTicketLink}
                   onClickDetail={handleClickDetail}
+                  showDetailContent={showDetailContent}
                 />
               </div>
               <div className="section">
-                <HelloSection isInvitation={isInvitation} />
+                <QuranSection />
               </div>
-              <WeddingSection isInvitation={isInvitation} />
-              {<CovidSection />}
-              {<LocationSection />}
-              <StorySection />
-              <PhotoSection />
-              <WishesSection />
-              <ConfirmationSection guestName={firstName} isInvitation={true} codeLink={finalTicketLink} />
-              <FooterSection isInvitation={true} />
-            </ReactFullpage.wrapper>
+              <div className="section">
+                <HelloSection location={location} isInvitation={isInvitation} />
+              </div>
+              <div className="section">
+                <WeddingSection location={location} isInvitation={isInvitation} />
+              </div>
+              <div className="section">
+                <StorySection />
+              </div>
+              <div className="section">
+                <WishesSection />
+              </div>
+              <div className="section">
+                <SendWishesSection
+                  guestName={guestName}
+                />
+              </div>
+              {
+                !hideGift &&
+                <div className="section">
+                  <GiftSection />
+                </div>
+              }
+              <div className="section">
+                <FooterSection isInvitation={true} />
+              </div>
+            </ReactFullpage.Wrapper>
           );
         }}
       />
+      <FloatingMusic show={showDetailContent} />
     </MainLayout>
-  );
+  )
+
 }
 
 Home.propTypes = {

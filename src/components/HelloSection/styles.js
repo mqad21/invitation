@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import Background from '@assets/images/tulip/tulip12.jpg';
 
-export const styWrapper = css`
+export const styWrapper = (showTitle = false) => css`
   .sub-title {
     color: #3;
     font-weight: 600;
@@ -17,7 +17,7 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.6);
   }  
 
   #lq-couple {
@@ -30,6 +30,10 @@ export const styWrapper = css`
   p {
     font-size: 16px;
     margin-top: 16px;
+  }
+
+  .title {
+    display: ${showTitle ? 'inline' : 'none'};}}
   }
 
   @media screen and (max-width: 768px) {
