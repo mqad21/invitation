@@ -2,32 +2,29 @@ import React from 'react';
 import { string, bool } from 'prop-types';
 import { styWrapperItem, styWithAnimation } from './styles';
 
-function WishesItem({ image, name, infoName, description, isActive }) {
-  if (!isActive) return null;
+function WishesItem({ message, name, dateTime }) {
 
   const renderItem = () => {
     return (
-      <div className="item glassmorphism pt-4" css={styWrapperItem}>
-        <div className={`testimony-slide text-center ${isActive ? 'active' : 'hide'}`}>
+      <div className="item glassmorphism p-4" css={styWrapperItem}>
+        <div className={`testimony-slide text-center`}>
           <h4>{name}</h4>
-          <span className="infoName">{infoName}</span>
-          <blockquote>
-            <p className="description">{description}</p>
+          <span className="infoName">{dateTime}</span>
+          <blockquote className="mb-0">
+            <p className="description">{message}</p>
           </blockquote>
         </div>
       </div>
     );
   };
 
-  return <div css={styWithAnimation(isActive)}>{renderItem()}</div>;
+  return <div css={styWithAnimation(true)}>{renderItem()}</div>;
 }
 
 WishesItem.propTypes = {
-  image: string.isRequired,
   name: string.isRequired,
-  infoName: string.isRequired,
-  description: string.isRequired,
-  isActive: bool.isRequired,
+  message: string.isRequired,
+  dateTime: string.isRequired,
 };
 
 export default React.memo(WishesItem);

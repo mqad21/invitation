@@ -25,8 +25,8 @@ export const styWrapperItem = css`
   h4 {
     color: #3A3B3C;
     font-weight: bold;
-    text-transform: uppercase;
     margin: 0 0 4px 0;
+    font-size: 18px;
   }
 
   blockquote {
@@ -52,6 +52,7 @@ export const styWrapperItem = css`
     font-size: 16px !important;
     max-height: 150px;
     overflow: auto;
+    margin-bottom: 0 !important;
   }
 
   @media screen and (max-width: 400px) {

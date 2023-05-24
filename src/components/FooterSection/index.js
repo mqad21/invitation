@@ -5,7 +5,7 @@ import { styWrapper } from '../FooterSection/styles';
 function FooterSection({ isInvitation }) {
   return (
     <div css={styWrapper}>
-      <div id="lq-footer">
+      <div className="lq-footer">
         <div className="overlay"></div>
         <div className="container min-vh-100 d-flex py-4">
           <div className="m-auto w-100">

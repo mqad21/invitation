@@ -19,7 +19,7 @@ function GiftSection() {
 
   return (
     <div css={styWrapper}>
-      <div id="lq-gift" className="glassmorphism-container min-vh-100">
+      <div className="lq-gift glassmorphism-container min-vh-100">
         <div className="overlay" />
 
         <div className="container min-vh-100 d-flex py-4">

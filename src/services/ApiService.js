@@ -15,3 +15,8 @@ export const getWishes = async () => {
     const response = await service.get('/wishes');
     return response.data;
 }
+
+export const sendWish = async (data) => {
+    const response = await service.post('/wishes', data);
+    return response.data;
+}

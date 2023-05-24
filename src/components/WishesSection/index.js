@@ -10,8 +10,7 @@ function WishesSection() {
 
   const fetchWishes = async () => {
     getWishes().then((res) => {
-      console.log('res', res)
-      setWishes(res);
+      setWishes(res.data);
     });
   }
 
@@ -31,8 +30,8 @@ function WishesSection() {
               </div>
             </div>
             <div className="row justify-center">
-              <div className="col-11">
-                <WishesContainer />
+              <div className="col-md-9 col-12">
+                <WishesContainer wishlist={wishes}/>
               </div>
             </div>
           </div>

@@ -1542,7 +1542,7 @@ form label {
 #fh5co-testimonial .wrap-testimony .testimony-slide blockquote {
   border: none;
   margin: 30px auto;
-  width: 50%;
+  width: 70%;
   position: relative;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -2467,6 +2467,6 @@ h2.main-font-salam {
 /* on desktop */
 @media only screen and (min-width: 768px) {
   .welcome-container {
-    margin-top: 50px !important
+    margin-top: .1rem !important
   }
 }

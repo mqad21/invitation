@@ -202,7 +202,7 @@ export const styWrapper = css`
     border-bottom: 1px solid;
     padding-bottom: 12px;
     max-width: 250px;
-    margin: auto auto 30px auto;
+    margin: auto auto 0px auto !important;
   }
 
   .margin__bottom {

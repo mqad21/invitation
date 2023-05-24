@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 import WishesItem from './WishesItem';
-import { wishlist } from './wishlist-data';
 import { styButtonWrapper } from './styles';
 
 const INTERVAL_SLIDE = 35000;
 
-function WishesContainer() {
+function WishesContainer({ wishlist = [] }) {
   const [active, setActive] = useState(0);
   const [pauseSlide, setPauseSlide] = useState(false);
   const totalWishes = wishlist.length || 0;

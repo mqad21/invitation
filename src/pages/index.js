@@ -29,14 +29,16 @@ function Home({ location }) {
 
   const [showDetailContent, setShowDetailContent] = useState(false);
 
-  const renderGift = () => {
-    if (hideGift) return null;
-    return (
-      <div className="section">
-        <GiftSection />
-      </div>
-    )
-  }
+  useEffect(() => {
+    const localId = localStorage.getItem('rZTrl3iOfg');
+    const localName = localStorage.getItem('name');
+    if (!localId || localName !== guestName) {
+      localStorage.setItem('rZTrl3iOfg', Math.random().toString(36).substr(2, 9));
+    }
+    if (!localName) {
+      localStorage.setItem('name', guestName);
+    }
+  }, []);
 
   return (
     <MainLayout>
@@ -45,7 +47,6 @@ function Home({ location }) {
         scrollOverflow={true}
         paddingBottom={100}
         paddingTop={100}
-        normalScrollElements=".normal-scroll"
         sensitivity={10}
         render={({ state, fullpageApi }) => {
 
@@ -59,6 +60,9 @@ function Home({ location }) {
             fullpageApi.setAllowScrolling(true);
           };
 
+          const goToPrevious = () => {
+            fullpageApi.moveSectionUp();
+          };
 
           return (
             <ReactFullpage.Wrapper>
@@ -90,10 +94,13 @@ function Home({ location }) {
               </div>
               <div className="section">
                 <SendWishesSection
+                  goToPrevious={goToPrevious}
                   guestName={guestName}
                 />
               </div>
-              {renderGift()}
+              <div className={hideGift ? 'd-none' : 'section'}>
+                <GiftSection />
+              </div>
               <div className="section">
                 <FooterSection isInvitation={true} />
               </div>

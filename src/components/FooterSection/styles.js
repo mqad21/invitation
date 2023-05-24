@@ -20,7 +20,7 @@ export const styWrapper = css`
     background: rgba(255, 255, 255, 0.5) !important;
   }  
 
-  #lq-footer {
+  .lq-footer {
     background-image: url(${Background});
     background-size: cover;
     background-position: center;
