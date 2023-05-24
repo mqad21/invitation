@@ -46,6 +46,7 @@ function Home({ location }) {
         paddingBottom={100}
         paddingTop={100}
         normalScrollElements=".normal-scroll"
+        sensitivity={10}
         render={({ state, fullpageApi }) => {
 
           if (fullpageApi && !showDetailContent) {

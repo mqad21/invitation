@@ -27,9 +27,9 @@ function FooterSection({ isInvitation }) {
                       <p>
                         <small className="block">&copy; 2023 Laila & Qadri. All Rights Reserved.</small>
                         <small className="block">
-                          Song by{' '}
-                          <a href="https://www.youtube.com/watch?v=fb167KAxvrg" target="_blank" rel="noreferrer">
-                            Anandito Anisa - Pernikahan Impian
+                          Sound by{' '}
+                          <a href="https://www.youtube.com/watch?v=aTp-PfeZQ-g&pp=ygUXaW5zdHJ1bWVudCBjaW50YW55YSBha3U%3D" target="_blank" rel="noreferrer">
+                            Tiara Andini, Arsy Widianto - Cintanya Aku - Peaceful Piano
                           </a>
                         </small>
                         <small className="block">

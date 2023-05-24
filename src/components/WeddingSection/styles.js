@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import Background from '@assets/images/tulip/tulip14.jpg';
+import Background from '@assets/images/tulip/tulip20.jpg';
 
 export const styWrapper = css`
 

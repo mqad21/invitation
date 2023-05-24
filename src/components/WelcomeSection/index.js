@@ -45,7 +45,7 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
         data-stellar-background-ratio="0.5"
       >
         <div className="overlay"></div>
-        <div className="container d-flex min-vh-100 py-4" style={{marginTop: '50px'}}>
+        <div className="container d-flex min-vh-100 py-4 welcome-container">
           <div className="m-auto">
             <div className="row justify-center" css={styWrapper}>
               <div className="col-12 text-center">

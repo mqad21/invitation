@@ -2400,7 +2400,7 @@ h2.main-font-salam {
 
 .min-vh-100 {
   min-height: 100vh;
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100svh;
 }
 
 .d-flex {
@@ -2462,4 +2462,11 @@ h2.main-font-salam {
 
 .glassmorphism-single {
   max-width: 768px !important;
+}
+
+/* on desktop */
+@media only screen and (min-width: 768px) {
+  .welcome-container {
+    margin-top: 50px !important
+  }
 }
