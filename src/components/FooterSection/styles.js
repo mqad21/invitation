@@ -17,14 +17,13 @@ export const styWrapper = css`
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5) !important;
   }  
 
   #lq-footer {
     background-image: url(${Background});
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
   }
 
   p {

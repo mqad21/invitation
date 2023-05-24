@@ -6,11 +6,18 @@ import Groom from '@assets/images/qadri_square.jpg';
 import getQueryValue from '@helpers/getQueryValue';
 
 import { styWrapper } from './styles';
+import { useMemo } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 function HelloSection({ location }) {
   const finalSubtitle = '24 . 06 . 23';
 
-  const showTitle = decodeURIComponent(getQueryValue(location, 't') || '') === '1';
+  const [showTitle, setShowTitle] = useState(false)
+
+  useEffect(() => {
+    setShowTitle(getQueryValue(location, 't') == '1')
+  }, [location])
 
   return (
     <div css={styWrapper(showTitle)}>
@@ -35,7 +42,7 @@ function HelloSection({ location }) {
                 <div className="desc-groom glassmorphism">
                   <h3 className="main-font">Laila Azzamah Ibda Nafisa<span className="title">, S.Tr.Stat</span></h3>
                   <p className="parent-name parent-name__top">
-                    Putri Bapak Mutijo<span className="title">, S.Si., M.Si.</span> &<br/>Ibu Wahyu Wijayanti<span className="title">, S.Pd.</span><br />
+                    Putri Bapak Mutijo<span className="title">, S.Si., M.Si.</span> &<br />Ibu Wahyu Wijayanti<span className="title">, S.Pd.</span><br />
                     <small>
                       <i>Kularan, Triharjo, Wates, Kulon Progo, D.I.Yogyakarta</i>
                     </small>
@@ -55,7 +62,7 @@ function HelloSection({ location }) {
                 <div className="desc-bride glassmorphism">
                   <h3 className="main-font">Muhammad Qadri<span className="title">, S.Tr.Stat</span></h3>
                   <p className="parent-name">
-                    Putra Bapak <span className="title">Drs. </span>Muhammad Amin &<br/>Ibu <span className="title">Dra. </span>Fauziah<br />
+                    Putra Bapak <span className="title">Drs. </span>Muhammad Amin &<br />Ibu <span className="title">Dra. </span>Fauziah<br />
                     <small>
                       <i>Marindal I, Patumbak, Deli Serdang, Sumatera Utara</i>
                     </small>

@@ -93,7 +93,7 @@ function SendWishesSection({ guestName }) {
             </div>
           </div>
           <div className="row justify-center">
-            <div className="col-10 glassmorphism py-4">
+            <div className="col-10 glassmorphism py-4 glassmorphism-single">
               <Fragment>
                 <form>
                   <div className="row">

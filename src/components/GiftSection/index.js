@@ -23,15 +23,15 @@ function GiftSection() {
         <div className="overlay" />
 
         <div className="container min-vh-100 d-flex py-4">
-          <div className="my-auto w-100">
+          <div className="m-auto">
             <div className="row justify-center">
               <div className="col-md-12 text-center fh5co-heading animate-box">
                 <h2 className="main-font">Hadiah Pernikahan</h2>
               </div>
             </div>
-            <div className="glassmorphism p-4 mb-4">
+            <div className="glassmorphism p-4 mb-4 glassmorphism-single">
               <div className="row justify-center">
-                <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <div className="col-md-10 text-center fh5co-heading">
                   <p className="info">
                     Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah. Tetapi jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentu semakin melengkapi kebahagiaan kami.
                   </p>

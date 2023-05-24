@@ -3,6 +3,15 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+if (process.env.STAGING) {
+  require("dotenv").config({
+    path: ".env",
+  })
+} else {
+  require("dotenv").config({
+    path: ".env.development",
+  })
+}
 
 module.exports = {
   /* Your site config here */

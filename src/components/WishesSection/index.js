@@ -1,8 +1,24 @@
 import React from 'react';
 import WishesContainer from './WishesContainer';
 import { styWrapper } from './styles';
+import { useEffect, useState } from 'react';
+import { getWishes } from '../../services/ApiService';
 
 function WishesSection() {
+
+  const [wishes, setWishes] = useState([]);
+
+  const fetchWishes = async () => {
+    getWishes().then((res) => {
+      console.log('res', res)
+      setWishes(res);
+    });
+  }
+
+  useEffect(() => {
+    fetchWishes();
+  }, []);
+
   return (
     <div css={styWrapper}>
       <div className="overlay"></div>

@@ -4,15 +4,15 @@ import { styWrapper } from '../FooterSection/styles';
 
 function FooterSection({ isInvitation }) {
   return (
-    <Fragment>
-      <div css={styWrapper}>
-        <div id="lq-footer" className="d-flex">
-          <div className="container my-auto">
-            <div className="overlay"></div>
+    <div css={styWrapper}>
+      <div id="lq-footer">
+        <div className="overlay"></div>
+        <div className="container min-vh-100 d-flex py-4">
+          <div className="m-auto w-100">
             <div className="row">
               <div className="col text-center fh5co-heading">
-                <h2 className="main-font">Terima Kasih</h2>
-                <p className="info glassmorphism py-3">
+                <h2 className="main-font mb-4">Terima Kasih</h2>
+                <p className="info glassmorphism glassmorphism-single m-auto py-3">
                   Atas segala do'a dan restu saudara/i,
                   <br /> kami ucapkan terima kasih. <br />
                   Wassalamu'alaikum warahmatullahi wabarakatuh.
@@ -47,7 +47,7 @@ function FooterSection({ isInvitation }) {
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }
 
@@ -55,4 +55,4 @@ FooterSection.propTypes = {
   isInvitation: bool.isRequired,
 };
 
-export default React.memo(FooterSection);
+export default FooterSection;

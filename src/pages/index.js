@@ -16,6 +16,7 @@ import WeddingSection from '@components/WeddingSection';
 import WelcomeSection from '@components/WelcomeSection';
 import WishesSection from '@components/WishesSection';
 import GiftSection from '@/components/GiftSection';
+import { useEffect } from 'react';
 
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
@@ -28,16 +29,22 @@ function Home({ location }) {
 
   const [showDetailContent, setShowDetailContent] = useState(false);
 
+  const renderGift = () => {
+    if (hideGift) return null;
+    return (
+      <div className="section">
+        <GiftSection />
+      </div>
+    )
+  }
 
   return (
     <MainLayout>
       <ReactFullpage
         licenseKey='gplv3-license'
         scrollOverflow={true}
-        fitToSection={true}
         paddingBottom={100}
         paddingTop={100}
-        continuousVertical={true}
         normalScrollElements=".normal-scroll"
         render={({ state, fullpageApi }) => {
 
@@ -85,12 +92,7 @@ function Home({ location }) {
                   guestName={guestName}
                 />
               </div>
-              {
-                !hideGift &&
-                <div className="section">
-                  <GiftSection />
-                </div>
-              }
+              {renderGift()}
               <div className="section">
                 <FooterSection isInvitation={true} />
               </div>
