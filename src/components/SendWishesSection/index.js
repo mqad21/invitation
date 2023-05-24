@@ -3,12 +3,14 @@ import { styWrapper } from './styles';
 import { useForm } from "react-hook-form";
 import { sendWish } from '../../services/ApiService';
 
+const id = typeof window != "undefined" ? localStorage.getItem('rZTrl3iOfg') : ''
+
 function SendWishesSection({ guestName, goToPrevious }) {
 
   const [disabled, setDisabled] = useState(false);
   const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm({
     defaultValues: {
-      id: localStorage.getItem('rZTrl3iOfg'),
+      id,
       name: guestName,
     },
   });

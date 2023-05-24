@@ -30,13 +30,13 @@ function Home({ location }) {
   const [showDetailContent, setShowDetailContent] = useState(false);
 
   useEffect(() => {
-    const localId = localStorage.getItem('rZTrl3iOfg');
-    const localName = localStorage.getItem('name');
+    const localId = localStorage?.getItem('rZTrl3iOfg');
+    const localName = localStorage?.getItem('name');
     if (!localId || localName !== guestName) {
-      localStorage.setItem('rZTrl3iOfg', Math.random().toString(36).substr(2, 9));
+      localStorage?.setItem('rZTrl3iOfg', Math.random().toString(36).substr(2, 9));
     }
     if (!localName) {
-      localStorage.setItem('name', guestName);
+      localStorage?.setItem('name', guestName);
     }
   }, []);
 
