@@ -94,4 +94,8 @@ export const styWrapper = css`
     right: 0;
     background: rgba(255, 255, 255, 0.3);
   }  
+
+  .sub-title {
+    font-size: 16px !important;
+  }
 `

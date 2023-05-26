@@ -8,7 +8,7 @@ import '@assets/css/style.css';
 import Favicon from '@assets/images/LQ.png';
 
 const IMAGE_URL = `lailaqadri.site/static/slide-6-4715e29302dbaa2ba21494c6258298d4.jpg`;
-const META_DESCRIPTION = `Dengan memohon Rahmat dan Ridho Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan. - Dinda & Indra`;
+const META_DESCRIPTION = `Dengan memohon Rahmat dan Ridha Illahi, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a agar senantiasa diberikan kelancaran dan keberkahan. - Dinda & Indra`;
 
 function MainLayout({ children }) {
 

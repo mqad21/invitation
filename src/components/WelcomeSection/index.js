@@ -58,11 +58,9 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
                 {renderGuestSection()}
               </div>
             </div>
-            <div className="row justify-center">
-              {!showDetailContent && <div className="row justify-center">
-                <ScrollToDown loading={false} onClick={handleShowDetail} />
-              </div>}
-            </div>
+            {!showDetailContent && <div className="row justify-center">
+              <ScrollToDown loading={false} onClick={handleShowDetail} />
+            </div>}
           </div>
         </div>
       </header>

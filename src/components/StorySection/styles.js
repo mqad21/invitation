@@ -18,4 +18,7 @@ export const styWrapper = () => css`
   background-position: bottom;
 }
 
+p.sub-title {
+  font-size: 16px !important;
+}
 `;

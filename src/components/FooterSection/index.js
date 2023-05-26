@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { bool } from 'prop-types';
 import { styWrapper } from '../FooterSection/styles';
+import LQ from "@assets/images/LQ.svg"
 
 function FooterSection({ isInvitation }) {
   return (
@@ -12,10 +13,9 @@ function FooterSection({ isInvitation }) {
             <div className="row">
               <div className="col text-center fh5co-heading">
                 <h2 className="main-font mb-4">Terima Kasih</h2>
-                <p className="info glassmorphism glassmorphism-single m-auto py-3">
-                  Atas segala do'a dan restu saudara/i,
-                  <br /> kami ucapkan terima kasih. <br />
-                  Wassalamu'alaikum warahmatullahi wabarakatuh.
+                <p className="info glassmorphism glassmorphism-single m-auto p-4">
+                  Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan do’a restunya untuk keberkahan pernikahan kami.<br />
+                  Wassalamu'alaikum warahmatullahi wabarakatuh
                 </p>
               </div>
             </div>
@@ -25,6 +25,7 @@ function FooterSection({ isInvitation }) {
                   <div className="row copyright">
                     <div className="col-md-12 text-center">
                       <p>
+                        <img src={LQ} alt="lq" width="250" />
                         <small className="block">&copy; 2023 Laila & Qadri. All Rights Reserved.</small>
                         <small className="block">
                           Sound by{' '}

@@ -130,6 +130,10 @@ export const styBackground = css`
   justify-content: center;
   align-items: center;
 
+  .title {
+    line-height: 1.25 !important;
+  }
+
   @media screen and (max-width: 768px) {
     background-position: top;
   }
@@ -157,7 +161,7 @@ export const styBackground = css`
 
 export const styWrapper = css`
   color: #fff;
-  margin-top: -8em;
+  margin-top: -8em !important;
 
   img {
     max-width: 80px;
@@ -233,8 +237,8 @@ export const styWrapper = css`
 
 export const styWrapperCount = css`
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   background: #FC94AF;
   margin: 12px;
   border-radius: 50%;
@@ -243,10 +247,11 @@ export const styWrapperCount = css`
   color: #fff;
 
   h3 {
-    font-size: 30px;
+    font-size: 24px;
     color: #fff;
     margin: 0;
-    margin-top: calc(0.8 * 28px)
+    margin-top: 16px;
+    line-height: 1;
   }
 
   @media screen and (max-width: 500px) {

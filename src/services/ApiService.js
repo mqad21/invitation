@@ -11,8 +11,12 @@ const service = axios.create({
     },
 });
 
-export const getWishes = async () => {
-    const response = await service.get('/wishes');
+export const getWishes = async (page = 1) => {
+    const response = await service.get('/wishes', {
+        params: {
+            page
+        }
+    });
     return response.data;
 }
 

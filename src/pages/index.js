@@ -17,6 +17,7 @@ import WelcomeSection from '@components/WelcomeSection';
 import WishesSection from '@components/WishesSection';
 import GiftSection from '@/components/GiftSection';
 import { useEffect } from 'react';
+import useWishes from '../hooks/useWishes';
 
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
@@ -29,14 +30,16 @@ function Home({ location }) {
 
   const [showDetailContent, setShowDetailContent] = useState(false);
 
+  const { wishes, fetchWishes, nextFetch } = useWishes()
+
   useEffect(() => {
     const localId = localStorage?.getItem('rZTrl3iOfg');
     const localName = localStorage?.getItem('name');
     if (!localId || localName !== guestName) {
-      localStorage?.setItem('rZTrl3iOfg', Math.random().toString(36).substr(2, 9));
+      typeof window !== undefined && localStorage.setItem('rZTrl3iOfg', Math.random().toString(36).substr(2, 9));
     }
     if (!localName) {
-      localStorage?.setItem('name', guestName);
+      typeof window !== undefined && localStorage.setItem('name', guestName);
     }
   }, []);
 
@@ -47,7 +50,7 @@ function Home({ location }) {
         scrollOverflow={true}
         paddingBottom={100}
         paddingTop={100}
-        sensitivity={10}
+        sensitivity={7}
         render={({ state, fullpageApi }) => {
 
           if (fullpageApi && !showDetailContent) {
@@ -90,12 +93,13 @@ function Home({ location }) {
                 <StorySection />
               </div>
               <div className="section">
-                <WishesSection />
+                <WishesSection wishes={wishes} nextFetch={nextFetch} />
               </div>
               <div className="section">
                 <SendWishesSection
                   goToPrevious={goToPrevious}
                   guestName={guestName}
+                  fetchWishes={fetchWishes}
                 />
               </div>
               <div className={hideGift ? 'd-none' : 'section'}>

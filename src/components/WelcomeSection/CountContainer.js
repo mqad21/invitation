@@ -21,7 +21,7 @@ function CountContainer() {
     );
 
   return (
-    <div className="col-md-12" css={styMargin('0 0 64px 0')}>
+    <div className="col-md-12" css={styMargin('0 0 32px 0')}>
       <CountItem text="Hari" number={days} />
       <CountItem text="Jam" number={hours} />
       <CountItem text="Menit" number={minutes} />

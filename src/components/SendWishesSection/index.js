@@ -1,14 +1,14 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { styWrapper } from './styles';
 import { useForm } from "react-hook-form";
 import { sendWish } from '../../services/ApiService';
+import { styWrapper } from './styles';
 
 const id = typeof window != "undefined" ? localStorage.getItem('rZTrl3iOfg') : ''
 
-function SendWishesSection({ guestName, goToPrevious }) {
+function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
 
   const [disabled, setDisabled] = useState(false);
-  const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm({
+  const { register, handleSubmit, formState: { errors, isSubmitting, isValidating }, setValue, reset } = useForm({
     defaultValues: {
       id,
       name: guestName,
@@ -16,9 +16,14 @@ function SendWishesSection({ guestName, goToPrevious }) {
   });
 
   const onSubmit = async (data) => {
-    const response = await sendWish(data)
-    reset()
-    goToPrevious()
+    try {
+      const response = await sendWish(data)
+      reset()
+      await fetchWishes()
+      goToPrevious()
+    } catch (e) {
+      console.error(e)
+    }
   }
 
 
@@ -73,6 +78,9 @@ function SendWishesSection({ guestName, goToPrevious }) {
                           {errors.message?.type === 'required' && <div class="text-danger">
                             Mohon diisi
                           </div>}
+                          {errors.message?.type === 'maxLength' && <div class="text-danger">
+                            Panjang karakter maksimal 500
+                          </div>}
                         </div>
                         {/* Select konfirmasi kehadiran */}
                         <div class="form-group my-4">
@@ -89,8 +97,8 @@ function SendWishesSection({ guestName, goToPrevious }) {
                             Mohon diisi
                           </div>}
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                          Kirim
+                        <button disabled={isValidating || isSubmitting} type="submit" class="btn btn-primary btn-block">
+                          {isValidating || isSubmitting ? 'Mengirim...' : 'Kirim'}
                         </button>
                       </div>
                     </div>

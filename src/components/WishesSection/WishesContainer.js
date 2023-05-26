@@ -5,7 +5,7 @@ import { styButtonWrapper } from './styles';
 
 const INTERVAL_SLIDE = 35000;
 
-function WishesContainer({ wishlist = [] }) {
+function WishesContainer({ wishlist = [], nextFetch }) {
   const [active, setActive] = useState(0);
   const [pauseSlide, setPauseSlide] = useState(false);
   const totalWishes = wishlist.length || 0;
@@ -13,6 +13,9 @@ function WishesContainer({ wishlist = [] }) {
   const handleSetActive = (isNext = true) => {
     if (isNext) {
       if (active === totalWishes - 1) {
+        if (active === 0) {
+          nextFetch();
+        }
         setActive(0);
       } else {
         setActive(active + 1);
@@ -40,8 +43,17 @@ function WishesContainer({ wishlist = [] }) {
     }
   }, [active]);
 
+  useEffect(() => {
+    if (active >= wishlist.length - 3) {
+      nextFetch();
+    }
+  }, [active]);
+
   const renderWishlist = () => {
-    return wishlist.map((w, index) => <WishesItem key={index} {...w} isActive={index === active} />);
+    if (wishlist.length == 0) {
+      return <p className="text-center font-italic">Belum ada doa & ucapan</p>
+    }
+    return wishlist.map((w, index) => <WishesItem key={w.id} {...w} isActive={index === active} />);
   };
 
   /** Side effect to autoscroll */
@@ -61,8 +73,8 @@ function WishesContainer({ wishlist = [] }) {
     <div className="wrap-testimony">
       {renderWishlist()}
       <div css={styButtonWrapper}>
-        <button className="btn btn-sm button-nav" onClick={() => handleSetActive(false)}>{`< Sebelumnya`}</button>
-        <button className="btn btn-sm button-nav" onClick={() => handleSetActive(true)}>{`Selanjutnya >`}</button>
+        <button disabled={active == 0} className="btn btn-sm button-nav" onClick={() => handleSetActive(false)}>{`< Sebelumnya`}</button>
+        <button disabled={active == wishlist.length - 1 && active != 0} className="btn btn-sm button-nav" onClick={() => handleSetActive(true)}>{`Selanjutnya >`}</button>
       </div>
     </div>
   );
