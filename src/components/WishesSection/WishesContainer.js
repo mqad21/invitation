@@ -70,13 +70,15 @@ function WishesContainer({ wishlist = [], nextFetch, total }) {
   return (
     <div className="wrap-testimony">
       {renderWishlist()}
-      <div className="row justify-content-center">
-        <div className="col-auto px-0 glassmorphism" css={styButtonWrapper}>
-          <button disabled={active == 0} className="btn btn-sm button-nav my-auto" onClick={() => handleSetActive(false)}>{`<`}</button>
-          <span className="mx-4 my-auto">{active + 1} dari {total}</span>
-          <button disabled={active == wishlist.length - 1 && wishlist.length != 1} className="btn btn-sm button-nav my-auto" onClick={() => handleSetActive(true)}>{`>`}</button>
+      {wishlist.length > 1 &&
+        <div className="row justify-content-center">
+          <div className="col-auto px-0 glassmorphism" css={styButtonWrapper}>
+            <button disabled={active == 0} className="btn btn-sm button-nav my-auto" onClick={() => handleSetActive(false)}>{`<`}</button>
+            <span className="mx-4 my-auto">{active + 1} dari {total}</span>
+            <button disabled={active == wishlist.length - 1 && wishlist.length != 1} className="btn btn-sm button-nav my-auto" onClick={() => handleSetActive(true)}>{`>`}</button>
+          </div>
         </div>
-      </div>
+      }
     </div>
   );
 }

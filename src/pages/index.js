@@ -72,7 +72,7 @@ function Home({ location }) {
         }}
         render={({ state, fullpageApi }) => {
 
-          if (fullpageApi && !showDetailContent && !isRsvp) {
+          if (fullpageApi && !showDetailContent && (!isRsvp && !hideGift)) {
             fullpageApi.setAllowScrolling(false);
           }
 
