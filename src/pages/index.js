@@ -17,11 +17,12 @@ import WelcomeSection from '@components/WelcomeSection';
 import WishesSection from '@components/WishesSection';
 import GiftSection from '@/components/GiftSection';
 import { useEffect } from 'react';
-import useWishes from '../hooks/useWishes';
+import useWishes from '@/hooks/useWishes';
+import { saveLog } from '@/services/ApiService';
+import RsvpSection from '@/components/RsvpSection';
 
 function Home({ location }) {
   const guestName = decodeURIComponent(getQueryValue(location, 'to') || '');
-  const hideGift = decodeURIComponent(getQueryValue(location, 'g') || '') === '0';
   const isInvitation = getQueryValue(location, 'type') === 'invitation';
   const firstName = guestName.replace(/ .*/, '');
   const isAnonymGuest = guestName === '' && !isInvitation;
@@ -30,7 +31,10 @@ function Home({ location }) {
 
   const [showDetailContent, setShowDetailContent] = useState(false);
 
-  const { wishes, fetchWishes, nextFetch } = useWishes()
+  const { total, wishes, fetchWishes, nextFetch } = useWishes()
+
+  const [hideGift, setHideGift] = useState(false)
+  const [isRsvp, setIsRsvp] = useState(false)
 
   useEffect(() => {
     const localId = localStorage?.getItem('rZTrl3iOfg');
@@ -41,7 +45,18 @@ function Home({ location }) {
     if (!localName) {
       typeof window !== undefined && localStorage.setItem('name', guestName);
     }
+
+    saveLog({
+      guest: guestName,
+      url: location.href
+    })
+
   }, []);
+
+  useEffect(() => {
+    setHideGift(getQueryValue(location, 'g') === '0')
+    setIsRsvp(getQueryValue(location, 'type') === 'rsvp')
+  }, [location])
 
   return (
     <MainLayout>
@@ -51,16 +66,40 @@ function Home({ location }) {
         paddingBottom={100}
         paddingTop={100}
         sensitivity={7}
+        onLeave={(origin, destination, direction) => {
+          if (destination.index === 2) {
+          }
+        }}
         render={({ state, fullpageApi }) => {
 
-          if (fullpageApi && !showDetailContent) {
+          if (fullpageApi && !showDetailContent && !isRsvp) {
             fullpageApi.setAllowScrolling(false);
           }
 
           const handleClickDetail = () => {
-            setShowDetailContent(true);
-            fullpageApi.moveSectionDown();
+            if (hideGift) {
+              fullpageApi.reBuild();
+            }
             fullpageApi.setAllowScrolling(true);
+            fullpageApi.moveTo(2);
+            setTimeout(() => {
+              if (!showDetailContent && document.getElementById("detail")) {
+                document.getElementById("detail").click();
+                setShowDetailContent(true);
+              }
+            }, 100)
+          };
+
+          const handleClickRsvp = () => {
+            fullpageApi.reBuild();
+            setShowDetailContent(true);
+            fullpageApi.setAllowScrolling(true);
+            fullpageApi.moveTo(3);
+            setTimeout(() => {
+              if (!showDetailContent && isRsvp) {
+                document.getElementById("rsvp").click();
+              }
+            }, 100)
           };
 
           const goToPrevious = () => {
@@ -78,10 +117,15 @@ function Home({ location }) {
                   codeLink={finalTicketLink}
                   onClickDetail={handleClickDetail}
                   showDetailContent={showDetailContent}
+                  isRsvp={isRsvp}
+                  onClickRsvp={handleClickRsvp}
                 />
               </div>
               <div className="section">
                 <QuranSection />
+              </div>
+              <div className={!isRsvp ? 'd-none' : 'section'}>
+                <RsvpSection />
               </div>
               <div className="section">
                 <HelloSection location={location} isInvitation={isInvitation} />
@@ -93,7 +137,7 @@ function Home({ location }) {
                 <StorySection />
               </div>
               <div className="section">
-                <WishesSection wishes={wishes} nextFetch={nextFetch} />
+                <WishesSection wishes={wishes} nextFetch={nextFetch} total={total} />
               </div>
               <div className="section">
                 <SendWishesSection

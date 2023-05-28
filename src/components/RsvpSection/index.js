@@ -3,15 +3,11 @@ import { useForm } from "react-hook-form";
 import { sendWish } from '../../services/ApiService';
 import { styWrapper } from './styles';
 
-const id = typeof window != "undefined" ? localStorage.getItem('rZTrl3iOfg') : ''
+function RsvpSection() {
 
-function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
-
-  const [disabled, setDisabled] = useState(false);
-  const { register, handleSubmit, formState: { errors, isSubmitting, isValidating }, setValue, reset } = useForm({
+  const { register, handleSubmit, formState: { errors, isSubmitting, isValidating }, reset } = useForm({
     defaultValues: {
-      id,
-      name: guestName,
+      id: Math.random().toString(36).substr(2, 9),
     },
   });
 
@@ -19,27 +15,20 @@ function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
     try {
       await sendWish(data)
       reset()
-      await fetchWishes(true)
-      goToPrevious()
     } catch (e) {
       console.error(e)
     }
   }
 
-
-  useEffect(() => {
-
-  }, []);
-
   return (
     <div css={styWrapper}>
-      <div id="fh5co-testimonial">
+      <div id="fh5co-rsvp">
         <div className="overlay"></div>
         <div className="container d-flex min-vh-100">
           <div className="my-auto">
             <div className="row justify-center">
               <div className="col-11 text-center fh5co-heading">
-                <h2 className="main-font">Kirim Doa & Ucapan</h2>
+                <h2 className="main-font">Konfirmasi Kehadiran</h2>
                 <p className="sub-title">
                   Kesan mendalam akan terukir di hati kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan ucapan selamat dan doa restu kepada kami. Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.
                 </p>
@@ -55,7 +44,6 @@ function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
                         <div className="form-group">
                           <label for="name">Nama</label>
                           <input
-                            disabled={disabled}
                             {...register("name", { required: true })}
                             type="text"
                             className="form-control"
@@ -65,31 +53,14 @@ function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
                             Mohon diisi
                           </div>}
                         </div>
-                        <label for="message">Doa & Ucapan</label>
-                        <div className="form-group">
-                          <textarea
-                            disabled={disabled}
-                            {...register("message", { required: true, maxLength: 500 })}
-                            rows="3"
-                            cols="60"
-                            className="form-control"
-                            placeholder="Ucapan dan doa restu untuk kedua mempelai"
-                          ></textarea>
-                          {errors.message?.type === 'required' && <div className="text-danger">
-                            Mohon diisi
-                          </div>}
-                          {errors.message?.type === 'maxLength' && <div className="text-danger">
-                            Panjang karakter maksimal 500
-                          </div>}
-                        </div>
                         {/* Select konfirmasi kehadiran */}
                         <div className="form-group my-4">
+                          <label for="is_attend">Konfirmasi Kehadiran</label>
                           <select
-                            disabled={disabled}
                             {...register("is_attend", { required: true })}
                             className="form-control"
                           >
-                            <option value="">Konfirmasi Kehadiran</option>
+                            <option value=""></option>
                             <option value="1">Hadir</option>
                             <option value="0">Tidak Hadir</option>
                           </select>
@@ -113,4 +84,4 @@ function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
   );
 }
 
-export default SendWishesSection;
+export default RsvpSection;

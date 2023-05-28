@@ -2,7 +2,7 @@ import React from 'react';
 import WishesContainer from './WishesContainer';
 import { styWrapper } from './styles';
 
-function WishesSection({ wishes, nextFetch }) {
+function WishesSection({ wishes, nextFetch, total }) {
 
   return (
     <div css={styWrapper}>
@@ -21,7 +21,7 @@ function WishesSection({ wishes, nextFetch }) {
             </div>
             <div className="row justify-center">
               <div className="col-md-9 col-12">
-                <WishesContainer wishlist={wishes} nextFetch={nextFetch} />
+                <WishesContainer wishlist={wishes} nextFetch={nextFetch} total={total} />
               </div>
             </div>
           </div>

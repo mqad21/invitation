@@ -3,9 +3,12 @@ import { number, string } from 'prop-types';
 import { styWrapperCount } from './styles';
 
 function CountItem({ number, text }) {
+
+  const padZero = (num) => num.toString().padStart(2, '0');
+
   return (
     <div css={styWrapperCount}>
-      <h3>{number}</h3>
+      <h3>{padZero(number)}</h3>
       <span>{text}</span>
     </div>
   );

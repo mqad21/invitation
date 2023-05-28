@@ -18,6 +18,7 @@ function useDateCountdown() {
   const [timeHasRunOut, setTimeHasRunOut] = useState(false);
   const [isEventOver, setIsEventOver] = useState(0);
 
+
   const calculateTimeLeft = useCallback(() => {
     const TIME_LEFT = EPOCH_START_EVENT - currentEpochTime;
 

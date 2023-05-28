@@ -2046,6 +2046,7 @@ form label {
 }
 
 .btn-primary:hover,
+.btn-primary:disabled,
 .btn-primary:focus,
 .btn-primary:active {
   background: #f366a3 !important;

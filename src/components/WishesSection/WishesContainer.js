@@ -5,7 +5,7 @@ import { styButtonWrapper } from './styles';
 
 const INTERVAL_SLIDE = 35000;
 
-function WishesContainer({ wishlist = [], nextFetch }) {
+function WishesContainer({ wishlist = [], nextFetch, total }) {
   const [active, setActive] = useState(0);
   const [pauseSlide, setPauseSlide] = useState(false);
   const totalWishes = wishlist.length || 0;
@@ -13,9 +13,6 @@ function WishesContainer({ wishlist = [], nextFetch }) {
   const handleSetActive = (isNext = true) => {
     if (isNext) {
       if (active === totalWishes - 1) {
-        if (active === 0) {
-          nextFetch();
-        }
         setActive(0);
       } else {
         setActive(active + 1);
@@ -44,6 +41,7 @@ function WishesContainer({ wishlist = [], nextFetch }) {
   }, [active]);
 
   useEffect(() => {
+    if (!wishlist.length) return
     if (active >= wishlist.length - 3) {
       nextFetch();
     }
@@ -72,9 +70,12 @@ function WishesContainer({ wishlist = [], nextFetch }) {
   return (
     <div className="wrap-testimony">
       {renderWishlist()}
-      <div css={styButtonWrapper}>
-        <button disabled={active == 0} className="btn btn-sm button-nav" onClick={() => handleSetActive(false)}>{`< Sebelumnya`}</button>
-        <button disabled={active == wishlist.length - 1 && active != 0} className="btn btn-sm button-nav" onClick={() => handleSetActive(true)}>{`Selanjutnya >`}</button>
+      <div className="row justify-content-center">
+        <div className="col-auto px-0 glassmorphism" css={styButtonWrapper}>
+          <button disabled={active == 0} className="btn btn-sm button-nav my-auto" onClick={() => handleSetActive(false)}>{`<`}</button>
+          <span className="mx-4 my-auto">{active + 1} dari {total}</span>
+          <button disabled={active == wishlist.length - 1 && wishlist.length != 1} className="btn btn-sm button-nav my-auto" onClick={() => handleSetActive(true)}>{`>`}</button>
+        </div>
       </div>
     </div>
   );

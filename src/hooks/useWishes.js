@@ -7,11 +7,18 @@ function useWishes() {
     const [wishes, setWishes] = useState([])
     const [loading, setLoading] = useState(false)
     const [page, setPage] = useState(1)
+    const [total, setTotal] = useState(0)
 
-    const handleFetch = async () => {
+    const handleFetch = async (refetch = false) => {
         try {
-            const res = await getWishes(page)
+            if (refetch) {
+                setPage(1)
+                setWishes([])
+                setTotal(0)
+            }
+            const res = await getWishes(refetch ? 1 : page)
             setWishes(res.data)
+            setTotal(res.total)
         } catch (e) {
             console.error(e)
         }
@@ -28,11 +35,14 @@ function useWishes() {
     }
 
     useEffect(() => {
-        setPage(1)
         handleFetch()
+        return () => {
+            setPage(1)
+            setWishes([])
+        }
     }, [])
 
-    return { wishes, loading, fetchWishes: handleFetch, nextFetch }
+    return { total, wishes, loading, fetchWishes: handleFetch, nextFetch }
 }
 
 export default useWishes

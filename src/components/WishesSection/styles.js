@@ -35,7 +35,6 @@ export const styWrapperItem = css`
 
   .infoName {
     font-size: 12px;
-    text-transform: capitalize;
     letter-spacing: 2px;
     display: block;
   }
@@ -63,7 +62,7 @@ export const styWrapperItem = css`
 `;
 
 export const styButtonWrapper = css`
-  display: flex;
+  display: inline-flex !important;
   justify-content: center;
 
   .button-nav {
