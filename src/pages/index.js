@@ -28,20 +28,22 @@ function Home({ location }) {
   const isAnonymGuest = guestName === '' && !isInvitation;
   const codeLink = getQueryValue(location, 'code') || '';
   const finalTicketLink = `code=${codeLink}&name=${guestName}`;
+  const isRsvp = getQueryValue(location, 'type') == 'rsvp';
+  const hideGift = getQueryValue(location, 'g') == '0';
+  const [fullpage, setFullpage] = useState(null);
 
   const [showDetailContent, setShowDetailContent] = useState(false);
 
   const { total, wishes, fetchWishes, nextFetch } = useWishes()
 
-  const [hideGift, setHideGift] = useState(false)
-  const [isRsvp, setIsRsvp] = useState(false)
-
   useEffect(() => {
     const localId = localStorage?.getItem('rZTrl3iOfg');
     const localName = localStorage?.getItem('name');
+
     if (!localId || localName !== guestName) {
       typeof window !== undefined && localStorage.setItem('rZTrl3iOfg', Math.random().toString(36).substr(2, 9));
     }
+
     if (!localName) {
       typeof window !== undefined && localStorage.setItem('name', guestName);
     }
@@ -54,8 +56,13 @@ function Home({ location }) {
   }, []);
 
   useEffect(() => {
-    setHideGift(getQueryValue(location, 'g') === '0')
-    setIsRsvp(getQueryValue(location, 'type') === 'rsvp')
+    if (!isRsvp && document.getElementById('rsvp-section')) {
+      typeof window !== undefined && document.getElementById('rsvp-section').classList.add('d-none');
+    }
+
+    if (hideGift && document.getElementById('gift-section')) {
+      typeof window !== undefined && document.getElementById('gift-section').classList.add('d-none');
+    }
   }, [location])
 
   return (
@@ -66,45 +73,44 @@ function Home({ location }) {
         paddingBottom={100}
         paddingTop={100}
         sensitivity={7}
+        fitToSection={false}
         onLeave={(origin, destination, direction) => {
-          if (destination.index === 2) {
-          }
+            if (destination.item.classList.contains('d-none')) {
+              return false;
+            }
         }}
         render={({ state, fullpageApi }) => {
 
-          if (fullpageApi && !showDetailContent && (!isRsvp && !hideGift)) {
+          if (fullpageApi && !showDetailContent) {
             fullpageApi.setAllowScrolling(false);
           }
 
+          if (!fullpage) {
+            setFullpage(fullpageApi)
+          }
+
           const handleClickDetail = () => {
-            if (hideGift) {
-              fullpageApi.reBuild();
-            }
+            setShowDetailContent(true);
             fullpageApi.setAllowScrolling(true);
-            fullpageApi.moveTo(2);
-            setTimeout(() => {
-              if (!showDetailContent && document.getElementById("detail")) {
-                document.getElementById("detail").click();
-                setShowDetailContent(true);
-              }
-            }, 100)
+            fullpageApi.moveSectionDown();
           };
 
           const handleClickRsvp = () => {
-            fullpageApi.reBuild();
             setShowDetailContent(true);
             fullpageApi.setAllowScrolling(true);
             fullpageApi.moveTo(3);
-            setTimeout(() => {
-              if (!showDetailContent && isRsvp) {
-                document.getElementById("rsvp").click();
-              }
-            }, 100)
           };
 
           const goToPrevious = () => {
             fullpageApi.moveSectionUp();
           };
+
+          if (state.destination) {
+            if (state.destination.item.classList.contains('d-none')) {
+              const nextIndex = state.direction === 'down' ? state.destination.index + 2 : state.destination.index;
+              fullpageApi.moveTo(nextIndex);
+            }
+          }
 
           return (
             <ReactFullpage.Wrapper>
@@ -112,19 +118,18 @@ function Home({ location }) {
                 <WelcomeSection
                   guestName={guestName}
                   isAnonymGuest={isAnonymGuest}
-                  isInvitation={isInvitation}
                   location={location}
                   codeLink={finalTicketLink}
                   onClickDetail={handleClickDetail}
+                  onClickRsvp={handleClickRsvp}
                   showDetailContent={showDetailContent}
                   isRsvp={isRsvp}
-                  onClickRsvp={handleClickRsvp}
                 />
               </div>
-              <div className="section">
+              <div className="section special-section">
                 <QuranSection />
               </div>
-              <div className={!isRsvp ? 'd-none' : 'section'}>
+              <div id="rsvp-section" className="section">
                 <RsvpSection />
               </div>
               <div className="section">
@@ -146,7 +151,7 @@ function Home({ location }) {
                   fetchWishes={fetchWishes}
                 />
               </div>
-              <div className={hideGift ? 'd-none' : 'section'}>
+              <div id="gift-section" className="section">
                 <GiftSection />
               </div>
               <div className="section">

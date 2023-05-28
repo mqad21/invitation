@@ -29,6 +29,7 @@ function useWishes() {
             const res = await getWishes(page + 1)
             setWishes([...wishes, ...res.data])
             setPage(page + 1)
+            return res
         } catch (e) {
             console.error(e)
         }

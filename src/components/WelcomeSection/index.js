@@ -7,7 +7,7 @@ import CountContainer from './CountContainer';
 import ScrollToDown from './ScrollToDown';
 import { styBackground, styButtonWrapper, styHero, styWrapper } from './styles';
 
-function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailContent, isRsvp, onClickRsvp, fullpageApi }) {
+function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailContent, isRsvp, onClickRsvp }) {
 
   const playAudio = () => {
     try {
@@ -83,7 +83,6 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
 
 WelcomeSection.propTypes = {
   guestName: string.isRequired,
-  isInvitation: bool.isRequired,
   isAnonymGuest: bool.isRequired,
   location: object.isRequired,
   codeLink: string,

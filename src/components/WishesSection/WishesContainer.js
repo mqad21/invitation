@@ -7,7 +7,7 @@ const INTERVAL_SLIDE = 35000;
 
 function WishesContainer({ wishlist = [], nextFetch, total }) {
   const [active, setActive] = useState(0);
-  const [pauseSlide, setPauseSlide] = useState(false);
+  const [pauseSlide, setPauseSlide] = useState(true);
   const totalWishes = wishlist.length || 0;
 
   const handleSetActive = (isNext = true) => {
@@ -43,7 +43,7 @@ function WishesContainer({ wishlist = [], nextFetch, total }) {
   useEffect(() => {
     if (!wishlist.length) return
     if (active >= wishlist.length - 3) {
-      nextFetch();
+      nextFetch()
     }
   }, [active]);
 
