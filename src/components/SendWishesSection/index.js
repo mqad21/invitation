@@ -84,14 +84,15 @@ function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
                         </div>
                         {/* Select konfirmasi kehadiran */}
                         <div className="form-group my-4">
+                        <label for="is_attend">Konfirmasi Kehadiran</label>
                           <select
                             disabled={disabled}
                             {...register("is_attend", { required: true })}
                             className="form-control"
                           >
-                            <option value="">Konfirmasi Kehadiran</option>
-                            <option value="1">Hadir</option>
-                            <option value="0">Tidak Hadir</option>
+                            <option value=""></option>
+                            <option value="1">Berkenan Hadir</option>
+                            <option value="0">Maaf, Belum Bisa Hadir</option>
                           </select>
                           {errors.is_attend?.type === 'required' && <div className="text-danger">
                             Mohon diisi

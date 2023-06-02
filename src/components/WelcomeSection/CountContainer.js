@@ -6,17 +6,24 @@ import { styMargin } from './styles';
 
 function CountContainer() {
   const { days, hours, minutes, seconds, timeHasRunOut, isEventOver } = useDateCountdown();
-  const finalText = isEventOver ? 'SUDAH' : 'SEDANG';
 
   if (timeHasRunOut)
     return (
       <>
         <div className="row">
           <div className="col-md-12" style={{ fontSize: '20px' }}>
-            {`ACARA ${finalText} BERLANGSUNG!`}
+            {!isEventOver && "ACARA SEDANG BERLANGSUNG"}
+            {isEventOver && "ACARA TELAH BERAKHIR"}
+            {isEventOver &&
+              <div className='mb-4'>
+                <p className='text-center mb-4 m-auto'>Terima kasih atas kehadiran dan doa yang telah diberikan. Semoga Allah SWT membalas kebaikan Bapak/Ibu/Saudara/i sekalian.</p>
+              </div>
+            }
           </div>
         </div>
-        <ButtonLive />
+        {!isEventOver &&
+          <ButtonLive />
+        }
       </>
     );
 
