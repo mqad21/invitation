@@ -10,7 +10,7 @@ import { useMemo } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-function HelloSection({ location }) {
+function HelloSection({ location, hideGift }) {
   const finalSubtitle = '24 . 06 . 23';
 
   const [showTitle, setShowTitle] = useState(false)
@@ -30,7 +30,7 @@ function HelloSection({ location }) {
                 <h2 className="main-font main-font-salam">Assalamu'a'laikum warahmatullahi wabarakatuh</h2>
                 <h3 className="sub-title hs">{finalSubtitle}</h3>
                 <p className="info">
-                  Dengan memohon Rahmat dan Ridha Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a restu Bapak/Ibu/Saudara/i agar senantiasa diberikan kelancaran dan keberkahan dalam rangka melangsungkan pernikahan kami:
+                  Dengan memohon Rahmat dan Ridha Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a restu Bapak/Ibu/Saudara/i agar senantiasa diberikan kelancaran dan keberkahan dalam rangka melangsungkan pernikahan {hideGift ? 'anak kami' : 'kami'}:
                 </p>
               </div>
             </div>

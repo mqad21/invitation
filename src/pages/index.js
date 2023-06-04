@@ -133,7 +133,7 @@ function Home({ location }) {
                 <RsvpSection />
               </div>
               <div className="section">
-                <HelloSection location={location} isInvitation={isInvitation} />
+                <HelloSection location={location} isInvitation={isInvitation} hideGift={hideGift} />
               </div>
               <div className="section">
                 <WeddingSection location={location} isInvitation={isInvitation} />
