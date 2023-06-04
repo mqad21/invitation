@@ -5,7 +5,7 @@ import WeddingInfoBox from './WeddingInfoBox';
 import { styWrapper } from './styles';
 import getQueryValue from '@helpers/getQueryValue';
 
-function WeddingSection({ isInvitation, location }) {
+function WeddingSection({ isInvitation, location, hideGift }) {
   const isUnduhMantu = decodeURIComponent(getQueryValue(location, 'u') || '') === '1';
 
 
@@ -29,7 +29,7 @@ function WeddingSection({ isInvitation, location }) {
           <div className="row justify-center">
             <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <div className="bismillah">بسم الله الرحمن الرحيم</div>
-              <span className="sub-title sub-title__wedding">Tanpa mengurangi rasa hormat, dengan ini kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami yang Insyaa Allah akan diselenggarakan pada:</span>
+              <span className="sub-title sub-title__wedding">Tanpa mengurangi rasa hormat, dengan ini kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan {hideGift ? 'anak kami' : 'kami'} yang Insyaa Allah akan diselenggarakan pada:</span>
             </div>
           </div>
           <div className="row justify-center">

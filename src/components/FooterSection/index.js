@@ -3,7 +3,7 @@ import { bool } from 'prop-types';
 import { styWrapper } from '../FooterSection/styles';
 import LQ from "@assets/images/LQ.svg"
 
-function FooterSection({ isInvitation }) {
+function FooterSection({ isInvitation, hideGift }) {
   return (
     <div css={styWrapper}>
       <div className="lq-footer">
@@ -14,7 +14,7 @@ function FooterSection({ isInvitation }) {
               <div className="col text-center fh5co-heading">
                 <h2 className="main-font mb-4">Terima Kasih</h2>
                 <p className="info glassmorphism glassmorphism-single m-auto p-4">
-                  Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan do’a restunya untuk keberkahan pernikahan kami.<br />
+                  Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan do’a restunya untuk keberkahan pernikahan {hideGift ? 'anak kami' : 'kami'}.<br />
                   Wassalamu'alaikum warahmatullahi wabarakatuh
                 </p>
               </div>

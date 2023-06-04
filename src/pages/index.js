@@ -130,32 +130,33 @@ function Home({ location }) {
                 <QuranSection />
               </div>
               <div id="rsvp-section" className="section">
-                <RsvpSection />
+                <RsvpSection hideGift={hideGift}/>
               </div>
               <div className="section">
                 <HelloSection location={location} isInvitation={isInvitation} hideGift={hideGift} />
               </div>
               <div className="section">
-                <WeddingSection location={location} isInvitation={isInvitation} />
+                <WeddingSection location={location} isInvitation={isInvitation} hideGift={hideGift}/>
               </div>
               <div className="section">
                 <StorySection />
               </div>
               <div className="section">
-                <WishesSection wishes={wishes} nextFetch={nextFetch} total={total} />
+                <WishesSection wishes={wishes} nextFetch={nextFetch} total={total} hideGift={hideGift}/>
               </div>
               <div className="section">
                 <SendWishesSection
                   goToPrevious={goToPrevious}
                   guestName={guestName}
                   fetchWishes={fetchWishes}
+                  hideGift={hideGift}
                 />
               </div>
               <div id="gift-section" className="section">
                 <GiftSection />
               </div>
               <div className="section">
-                <FooterSection isInvitation={true} />
+                <FooterSection isInvitation={true} hideGift={hideGift}/>
               </div>
             </ReactFullpage.Wrapper>
           );

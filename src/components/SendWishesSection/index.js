@@ -5,7 +5,7 @@ import { styWrapper } from './styles';
 
 const id = typeof window != "undefined" ? localStorage.getItem('rZTrl3iOfg') : ''
 
-function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
+function SendWishesSection({ guestName, goToPrevious, fetchWishes, hideGift }) {
 
   const [disabled, setDisabled] = useState(false);
   const { register, handleSubmit, formState: { errors, isSubmitting, isValidating }, setValue, reset } = useForm({
@@ -41,7 +41,7 @@ function SendWishesSection({ guestName, goToPrevious, fetchWishes }) {
               <div className="col-11 text-center fh5co-heading">
                 <h2 className="main-font">Kirim Doa & Ucapan</h2>
                 <p className="sub-title">
-                  Kesan mendalam akan terukir di hati kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan ucapan selamat dan doa restu kepada kami. Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.
+                  Kesan mendalam akan terukir di hati kami, apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan ucapan selamat dan doa restu kepada {hideGift ? 'anak kami' : 'kami'}. Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.
                 </p>
               </div>
             </div>
