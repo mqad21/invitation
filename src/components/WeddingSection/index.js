@@ -4,22 +4,26 @@ import React from 'react';
 import WeddingInfoBox from './WeddingInfoBox';
 import { styWrapper } from './styles';
 import getQueryValue from '@helpers/getQueryValue';
+import { useInView, animated } from '@react-spring/web'
 
 function WeddingSection({ isInvitation, location, hideGift }) {
   const isUnduhMantu = decodeURIComponent(getQueryValue(location, 'u') || '') === '1';
 
-
-  // const renderGuestInfo = () => {
-  //   return (
-  //     <Fragment>
-  //       <div className="col-md-8 col-md-offset-4">
-  //         <WeddingInfoBox title="Akad Nikah" time="08.00 WIB (Live di Instagram)" date="Sabtu, 03 Oktober 2020" />
-  //       </div>
-  //       <ButtonLive />
-  //     </Fragment>
-  //   );
-  // };
-
+  const [ref0, animate0] = useInView(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: {
+        duration: 700,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 1000
+    }),
+    {
+      once: true,
+      rootMargin: '-20% 0%',
+    }
+  )
 
   return (
     <div css={styWrapper}>
@@ -27,10 +31,10 @@ function WeddingSection({ isInvitation, location, hideGift }) {
         <div className="overlay" />
         <div className="container">
           <div className="row justify-center">
-            <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
+            <animated.div ref={ref0} style={animate0} className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <div className="bismillah">بسم الله الرحمن الرحيم</div>
               <span className="sub-title sub-title__wedding">Tanpa mengurangi rasa hormat, dengan ini kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan {hideGift ? 'anak kami' : 'kami'} yang Insyaa Allah akan diselenggarakan pada:</span>
-            </div>
+            </animated.div>
           </div>
           <div className="row justify-center">
             <div className="col-md-10 col-md-offset-1">
@@ -53,6 +57,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                     date="24  Juni  2023"
                     description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
                     link="https://goo.gl/maps/Htf1ffVCu8mgbXx5A"
+                    fromLeft={false}
                   />
                 }
                 {isUnduhMantu &&
@@ -61,6 +66,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                     day="Sabtu"
                     date="24  Juni  2023"
                     description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
+                    fromLeft={false}
                   />
                 }
                 <WeddingInfoBox

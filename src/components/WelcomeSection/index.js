@@ -6,8 +6,45 @@ import WeddingImg from '@assets/images/wedding-logo.png';
 import CountContainer from './CountContainer';
 import ScrollToDown from './ScrollToDown';
 import { styBackground, styButtonWrapper, styHero, styWrapper } from './styles';
+import { useSpring, animated } from '@react-spring/web'
 
 function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailContent, isRsvp, onClickRsvp }) {
+
+  const [animate1] = useSpring(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: { duration: 2000 },
+    }),
+    []
+  )
+
+  const [animate2] = useSpring(
+    () => ({
+      from: { opacity: 0, scale: 0.2 },
+      to: { opacity: 1, scale: 1 },
+      config: {
+        duration: 700,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 700,
+    }),
+    []
+  )
+
+  const [animate3] = useSpring(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: {
+        duration: 1000, 
+        easing: (t) => t * (2 - t),
+      },
+      delay: 1500,
+    }),
+    []
+  )
+
 
   const playAudio = () => {
     try {
@@ -32,7 +69,7 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
     if (isRsvp) return (
       <div className="row justify-center">
         <div className="col-md-6 col-8">
-          <div id="rsvp"  onClick={handleClickRsvp} className="btn btn-primary btn-block">Konfirmasi Kehadiran</div>
+          <div id="rsvp" onClick={handleClickRsvp} className="btn btn-primary btn-block">Konfirmasi Kehadiran</div>
         </div>
       </div>
     );
@@ -62,18 +99,24 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
           <div className="m-auto">
             <div className="row justify-center" css={styWrapper}>
               <div className="col-12 text-center">
-                <img src={WeddingImg} alt="wedding-dinda-indra" />
-                <h4 className="sub-title">Walimatul 'Urs</h4>
-                <h1 className="title">Laila &amp; Qadri</h1>
-                <div className={isAnonymGuest ? 'margin__bottom' : ''}>
+                <animated.div style={animate1}>
+                  <img src={WeddingImg} alt="wedding-dinda-indra" />
+                  <h4 className="sub-title">Walimatul 'Urs</h4>
+                  <h1 className="title">Laila &amp; Qadri</h1>
+                </animated.div>
+                <animated.div style={animate3} className={isAnonymGuest ? 'margin__bottom' : ''}>
                   <CountContainer />
-                </div>
-                {renderGuestSection()}
+                </animated.div>
+                <animated.div style={animate2}>
+                  {renderGuestSection()}
+                </animated.div>
               </div>
             </div>
-            {(!showDetailContent && !isRsvp) && <div className="row justify-center">
-              <ScrollToDown loading={false} onClick={handleShowDetail} />
-            </div>}
+            <animated.div style={animate1}>
+              {(!showDetailContent && !isRsvp) && <div className="row justify-center">
+                <ScrollToDown loading={false} onClick={handleShowDetail} />
+              </div>}
+            </animated.div>
           </div>
         </div>
       </header>

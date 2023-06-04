@@ -9,6 +9,7 @@ import { styWrapper } from './styles';
 import { useMemo } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useInView, animated } from '@react-spring/web'
 
 function HelloSection({ location, hideGift }) {
   const finalSubtitle = '24 . 06 . 23';
@@ -19,6 +20,53 @@ function HelloSection({ location, hideGift }) {
     setShowTitle(getQueryValue(location, 't') == '1')
   }, [location])
 
+  const [ref1, animate1] = useInView(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: {
+        duration: 700,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 1000
+    }),
+    {
+      once: true,
+      rootMargin: '-20% 0%',
+    }
+  )
+
+  const [ref2, animate2] = useInView(
+    () => ({
+      from: { opacity: 0, scale: 0.2 },
+      to: { opacity: 1, scale: 1 },
+      config: {
+        duration: 700,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 1000
+    }),
+    {
+      once: true,
+      rootMargin: '50% 0%',
+    }
+  )
+
+  const [ref3, animate3] = useInView(
+    () => ({
+      from: { opacity: 0, scale: 0.2 },
+      to: { opacity: 1, scale: 1 },
+      config: {
+        duration: 700,
+        easing: (t) => t * (2 - t),
+      },
+    }),
+    {
+      once: true,
+      rootMargin: '100% 0%',
+    }
+  )
+
   return (
     <div css={styWrapper(showTitle)}>
       <div id="lq-couple">
@@ -26,16 +74,16 @@ function HelloSection({ location, hideGift }) {
         <div className="container min-vh-100 d-flex py-4 ">
           <div className="my-auto">
             <div className="row justify-center">
-              <div className="col-md-8 col-md-offset-2 text-center fh5co-heading">
+              <animated.div ref={ref1} style={animate1} className="col-md-8 col-md-offset-2 text-center fh5co-heading">
                 <h2 className="main-font main-font-salam">Assalamu'a'laikum warahmatullahi wabarakatuh</h2>
                 <h3 className="sub-title hs">{finalSubtitle}</h3>
                 <p className="info">
                   Dengan memohon Rahmat dan Ridha Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a restu Bapak/Ibu/Saudara/i agar senantiasa diberikan kelancaran dan keberkahan dalam rangka melangsungkan pernikahan {hideGift ? 'anak kami' : 'kami'}:
                 </p>
-              </div>
+              </animated.div>
             </div>
             <div className="couple-wrap">
-              <div className="couple-half">
+              <animated.div ref={ref2} style={animate2} className="couple-half">
                 <div className="groom">
                   <img src={Bride} alt="groom" className="img-responsive" loading="lazy" />
                 </div>
@@ -48,14 +96,14 @@ function HelloSection({ location, hideGift }) {
                     </small>
                   </p>
                 </div>
-              </div>
+              </animated.div>
               <p className="heart text-center">
                 <i className="icon-heart2"></i>
               </p>
               <div className="and-love">
                 <i>&</i>
               </div>
-              <div className="couple-half">
+              <animated.div ref={ref3} style={animate3} className="couple-half">
                 <div className="bride">
                   <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
                 </div>
@@ -68,7 +116,7 @@ function HelloSection({ location, hideGift }) {
                     </small>
                   </p>
                 </div>
-              </div>
+              </animated.div>
             </div>
           </div>
 

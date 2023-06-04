@@ -2,11 +2,27 @@ import React from 'react';
 
 import { styWrapper } from './styles';
 import LQ from "@assets/images/LQ.svg"
+import { useInView, animated } from '@react-spring/web'
 
 function QuranSection() {
 
+  const [ref, springs] = useInView(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: {
+        duration: 700,
+        easing: (t) => t * (2 - t),
+      },
+    }),
+    {
+      once: true,
+      rootMargin: '-20% 0%'
+    }
+  )
+
   return (
-    <div css={styWrapper}>
+    <animated.div ref={ref} style={springs} css={styWrapper}>
       <div id="lq-quran" className="glassmorphism-container">
         <div className="overlay" />
         <div className="container min-vh-100 d-flex py-4">
@@ -31,7 +47,7 @@ function QuranSection() {
           </div>
         </div>
       </div>
-    </div>
+    </animated.div>
 
   )
 }

@@ -17,10 +17,12 @@
     "@emotion/core": "^10.0.28",
     "@fullpage/react-fullpage": "^0.1.19",
     "@loadable/component": "^5.12.0",
+    "@react-spring/web": "^9.6.1",
     "add": "^2.0.6",
     "axios": "^1.4.0",
     "dotenv": "^16.0.3",
     "eslint-loader": "^4.0.2",
+    "framer-motion": "^7.10.3",
     "fullpage-react": "^3.1.0",
     "gatsby": "^2.21.37",
     "gatsby-plugin-emotion": "^4.3.2",
@@ -29,11 +31,13 @@
     "moment": "^2.29.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-hook-form": "^7.43.9",
     "react-image-gallery": "^1.0.7",
-    "react-qr-code": "^1.0.2"
+    "react-qr-code": "^1.0.2",
+    "react-spring": "^9.7.1"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

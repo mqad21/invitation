@@ -6,7 +6,9 @@ import { styWrapper } from './styles';
 
 function StorySection() {
   const renderStories = () => {
-    return stories.map((s, index) => <StoryItem key={index} {...s} isInverted={index % 2 === 1} />);
+    return stories.map((s, index) => {
+      return <StoryItem key={index} {...s} isInverted={index % 2 === 1} />
+    });
   };
 
   return (

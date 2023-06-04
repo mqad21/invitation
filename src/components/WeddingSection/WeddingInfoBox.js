@@ -1,9 +1,27 @@
 import React from 'react';
 import { string } from 'prop-types';
+import { useInView, animated } from '@react-spring/web'
 
-function WeddingInfoBox({ title, date, time, day, description, link }) {
+function WeddingInfoBox({ title, date, time, day, description, link, fromLeft = true }) {
+
+  const [ref1, animate1] = useInView(
+    () => ({
+      from: { opacity: 0, x: fromLeft ? -100 : 100 },
+      to: { opacity: 1, x: 0 },
+      config: {
+        duration: 700,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 1000
+    }),
+    {
+      once: true,
+      rootMargin: '-20% 0%',
+    }
+  )
+
   return (
-    <div className="col-md-6 col-sm-6 text-center mb-4 ">
+    <animated.div ref={ref1} style={animate1} className="col-md-6 col-sm-6 text-center mb-4 ">
       <div className="event-wrap glassmorphism">
         <h3>{title}</h3>
 
@@ -38,15 +56,8 @@ function WeddingInfoBox({ title, date, time, day, description, link }) {
           </>
         )}
       </div>
-    </div>
+    </animated.div>
   );
 }
-
-WeddingInfoBox.propTypes = {
-  title: string.isRequired,
-  date: string.isRequired,
-  day: string.isRequired,
-  description: string.isRequired,
-};
 
 export default React.memo(WeddingInfoBox);
