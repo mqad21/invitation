@@ -16,7 +16,7 @@ function WeddingInfoBox({ title, date, time, day, description, link, fromLeft = 
     }),
     {
       once: true,
-      rootMargin: '-20% 0%',
+      rootMargin: '-40% 0%',
     }
   )
 
@@ -48,7 +48,7 @@ function WeddingInfoBox({ title, date, time, day, description, link, fromLeft = 
             </div>
             {link && (
               <div className="row justify-center mt-4">
-                <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-outline btn-sm text-center py-1 d-flex align-items-center">
+                <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm text-center py-1 d-flex align-items-center">
                   <span className='icon-location mr-2'></span>
                   Lokasi
                 </a>

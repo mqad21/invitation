@@ -10,11 +10,14 @@ import { useSpring, animated } from '@react-spring/web'
 
 function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailContent, isRsvp, onClickRsvp }) {
 
+  const FIRST_DELAY = 500;
+
   const [animate1] = useSpring(
     () => ({
       from: { opacity: 0 },
       to: { opacity: 1 },
-      config: { duration: 2000 },
+      config: { duration: 1500 },
+      delay: 0 + FIRST_DELAY,
     }),
     []
   )
@@ -27,7 +30,7 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
         duration: 700,
         easing: (t) => t * (2 - t),
       },
-      delay: 700,
+      delay: 700 + FIRST_DELAY,
     }),
     []
   )
@@ -37,14 +40,23 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
       from: { opacity: 0 },
       to: { opacity: 1 },
       config: {
-        duration: 1000, 
+        duration: 1000,
         easing: (t) => t * (2 - t),
       },
-      delay: 1500,
+      delay: 1300 + FIRST_DELAY,
     }),
     []
   )
 
+  const [animate4] = useSpring(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: { duration: 2000 },
+      delay: 2000 + FIRST_DELAY,
+    }),
+    []
+  )
 
   const playAudio = () => {
     try {
@@ -112,7 +124,7 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
                 </animated.div>
               </div>
             </div>
-            <animated.div style={animate1}>
+            <animated.div style={animate4}>
               {(!showDetailContent && !isRsvp) && <div className="row justify-center">
                 <ScrollToDown loading={false} onClick={handleShowDetail} />
               </div>}

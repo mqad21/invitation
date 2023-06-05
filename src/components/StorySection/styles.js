@@ -21,4 +21,11 @@ export const styWrapper = () => css`
 p.sub-title {
   font-size: 16px !important;
 }
+
+@media screen and (max-width: 768px) {
+  #fh5co-couple-story {
+    padding-bottom: 100px;
+  }
+}
+
 `;

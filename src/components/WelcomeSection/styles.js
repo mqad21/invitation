@@ -251,6 +251,7 @@ export const styWrapperCount = css`
     color: #fff;
     margin: 0;
     margin-top: 16px;
+    margin-bottom: 1px !important;
     line-height: 1;
   }
 

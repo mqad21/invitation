@@ -14,6 +14,7 @@ function QuranSection() {
         duration: 700,
         easing: (t) => t * (2 - t),
       },
+      delay: 500
     }),
     {
       once: true,

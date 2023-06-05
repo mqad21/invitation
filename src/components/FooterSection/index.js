@@ -2,14 +2,32 @@ import React, { Fragment } from 'react';
 import { bool } from 'prop-types';
 import { styWrapper } from '../FooterSection/styles';
 import LQ from "@assets/images/LQ.svg"
+import { useInView, animated } from '@react-spring/web';
 
 function FooterSection({ isInvitation, hideGift }) {
+
+  const [ref1, animate1] = useInView(
+    () => ({
+      from: { opacity: 0, y: 200 },
+      to: { opacity: 1, y: 0 },
+      config: {
+        duration: 900,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 500
+    }),
+    {
+      once: true,
+      rootMargin: '0% 0%',
+    }
+  )
+
   return (
     <div css={styWrapper}>
       <div className="lq-footer">
         <div className="overlay"></div>
         <div className="container min-vh-100 d-flex py-4">
-          <div className="m-auto w-100">
+          <animated.div ref={ref1} style={animate1} className="m-auto w-100">
             <div className="row">
               <div className="col text-center fh5co-heading">
                 <h2 className="main-font mb-4">Terima Kasih</h2>
@@ -45,7 +63,7 @@ function FooterSection({ isInvitation, hideGift }) {
                 </div>
               </footer>
             </div>
-          </div>
+          </animated.div>
         </div>
       </div>
     </div>

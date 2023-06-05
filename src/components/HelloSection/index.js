@@ -1,15 +1,13 @@
-import React from 'react';
 import { bool } from 'prop-types';
+import React from 'react';
 
 import Bride from '@assets/images/laila_square.jpg';
 import Groom from '@assets/images/qadri_square.jpg';
 import getQueryValue from '@helpers/getQueryValue';
 
+import { animated, useInView } from '@react-spring/web';
+import { useEffect, useState } from 'react';
 import { styWrapper } from './styles';
-import { useMemo } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useInView, animated } from '@react-spring/web'
 
 function HelloSection({ location, hideGift }) {
   const finalSubtitle = '24 . 06 . 23';
@@ -25,7 +23,7 @@ function HelloSection({ location, hideGift }) {
       from: { opacity: 0 },
       to: { opacity: 1 },
       config: {
-        duration: 700,
+        duration: 900,
         easing: (t) => t * (2 - t),
       },
       delay: 1000
@@ -41,7 +39,7 @@ function HelloSection({ location, hideGift }) {
       from: { opacity: 0, scale: 0.2 },
       to: { opacity: 1, scale: 1 },
       config: {
-        duration: 700,
+        duration: 900,
         easing: (t) => t * (2 - t),
       },
       delay: 1000
@@ -57,7 +55,7 @@ function HelloSection({ location, hideGift }) {
       from: { opacity: 0, scale: 0.2 },
       to: { opacity: 1, scale: 1 },
       config: {
-        duration: 700,
+        duration: 900,
         easing: (t) => t * (2 - t),
       },
     }),

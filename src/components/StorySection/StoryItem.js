@@ -4,6 +4,7 @@ import { useInView, animated } from '@react-spring/web'
 
 function StoryItem({ image, title, date, description, isInverted }) {
 
+
   const [ref1, animate1] = useInView(
     () => ({
       from: { opacity: 0, x: 100 },
@@ -16,7 +17,8 @@ function StoryItem({ image, title, date, description, isInverted }) {
     }),
     {
       once: true,
-      rootMargin: '0% 0%',
+      rootMargin: '-200px 0%',
+      threshold: 1
     }
   )
 
@@ -32,7 +34,8 @@ function StoryItem({ image, title, date, description, isInverted }) {
     }),
     {
       once: true,
-      rootMargin: '100% 0%',
+      rootMargin: '500px 0%',
+      threshold: 0.75
     }
   )
 

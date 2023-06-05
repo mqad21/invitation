@@ -21,4 +21,12 @@ export const styWrapper = css`
   .sub-title {
     font-size: 16px !important;
   }
+
+  @media (max-width: 768px) {
+    #fh5co-testimonial {
+      background-position: center;
+      padding-bottom: 100px;
+    }
+  }
+
 `;

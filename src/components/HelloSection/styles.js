@@ -39,6 +39,7 @@ export const styWrapper = (showTitle = false) => css`
   @media screen and (max-width: 768px) {
     #lq-couple {
       background-position: top !important ;
+      padding-bottom: 100px;
     }  
   }
 

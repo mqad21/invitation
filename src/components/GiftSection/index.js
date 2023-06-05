@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { styWrapper } from './styles';
 import { gifts } from './gift-data';
 import GiftInformation from './GiftInformation';
+import { useInView, animated } from '@react-spring/web';
 
 
 function renderGiftInformation() {
@@ -17,12 +18,44 @@ function GiftSection() {
     setShowGift(!showGift)
   }
 
+  const [ref0, animate0] = useInView(
+    () => ({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      config: {
+        duration: 900,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 500
+    }),
+    {
+      once: true,
+      rootMargin: '0% 0%',
+    }
+  )
+
+
+  const [ref1, animate1] = useInView(
+    () => ({
+      from: { opacity: 0, scale: 0 },
+      to: { opacity: 1, scale: 1 },
+      config: {
+        duration: 900,
+        easing: (t) => t * (2 - t),
+      },
+      delay: 500
+    }),
+    {
+      once: true,
+      rootMargin: '0% 0%',
+    }
+  )
+
   return (
     <div css={styWrapper}>
       <div className="lq-gift glassmorphism-container min-vh-100">
         <div className="overlay" />
-
-        <div className="container min-vh-100 d-flex py-4">
+        <animated.div ref={ref0} style={animate0} className="container min-vh-100 d-flex py-4">
           <div className="m-auto">
             <div className="row justify-center">
               <div className="col-md-12 text-center fh5co-heading animate-box">
@@ -42,11 +75,13 @@ function GiftSection() {
                 </div>
               </div>
             </div>
-            {showGift && <div className="container">
-              {renderGiftInformation()}
-            </div>}
+            {
+              showGift && <animated.div className="container" ref={ref1} style={animate1}>
+                {renderGiftInformation()}
+              </animated.div>
+            }
           </div>
-        </div>
+        </animated.div>
       </div>
     </div>
 
