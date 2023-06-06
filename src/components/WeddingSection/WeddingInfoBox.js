@@ -41,23 +41,20 @@ function WeddingInfoBox({ title, date, time, day, description, link, fromLeft = 
           )
         }
 
-        {description && (
-          <>
-            <div className="event-col">
-              <span className='text-center w-100 place' dangerouslySetInnerHTML={{ __html: description }} />
-            </div>
-            {link && (
-              <div className="row justify-center mt-4">
-                <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm text-center py-1 d-flex align-items-center">
-                  <span className='icon-location mr-2'></span>
-                  Lokasi
-                </a>
-              </div>)}
-          </>
-        )}
+        <div className="event-col">
+          <span className='text-center w-100 place' dangerouslySetInnerHTML={{__html: description}}>
+          </span>
+        </div>
+        {link && (
+          <div className="row justify-center mt-4">
+            <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm text-center py-1 d-flex align-items-center">
+              <span className='icon-location mr-2'></span>
+              Lokasi
+            </a>
+          </div>)}
       </div>
     </animated.div>
   );
 }
 
-export default React.memo(WeddingInfoBox);
+export default WeddingInfoBox;
