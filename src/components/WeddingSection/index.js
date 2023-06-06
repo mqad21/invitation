@@ -41,6 +41,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
               <div className="row justify-center">
                 {!isUnduhMantu &&
                   <WeddingInfoBox
+                    key="akad"
                     title="Akad Nikah"
                     time="08.00 WIB"
                     day="Sabtu"
@@ -51,6 +52,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                 }
                 {!isUnduhMantu &&
                   <WeddingInfoBox
+                    key="Walimah"
                     title="Walimah"
                     time="11.00 - 13.00 WIB"
                     day="Sabtu"
@@ -62,6 +64,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                 }
                 {isUnduhMantu &&
                   <WeddingInfoBox
+                    key="AkadWalimah"
                     title="Akad & Walimah"
                     day="Sabtu"
                     date="24  Juni  2023"
@@ -70,6 +73,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                   />
                 }
                 <WeddingInfoBox
+                  key="NgunduhMantu"
                   title="Ngunduh Mantu"
                   time="10.00 - 18.00 WIB"
                   day="Sabtu"
