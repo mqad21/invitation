@@ -46,7 +46,8 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                     time="08.00 WIB"
                     day="Sabtu"
                     date="24  Juni  2023"
-                    description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
+                    description="Joglo Kopi Jolotundo"
+                    subdescription="Sogan, Wates, Kulon Progo, D.I.Yogyakarta"
                     link="https://goo.gl/maps/Htf1ffVCu8mgbXx5A"
                   />
                 }
