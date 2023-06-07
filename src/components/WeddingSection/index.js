@@ -29,7 +29,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
     <div css={styWrapper}>
       <div id="fh5co-event">
         <div className="overlay" />
-        <div className="container">
+        <div className="container min-vh-100">
           <div className="row justify-center">
             <animated.div ref={ref0} style={animate0} className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <div className="bismillah">بسم الله الرحمن الرحيم</div>
@@ -57,7 +57,8 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                     time="11.00 - 13.00 WIB"
                     day="Sabtu"
                     date="24  Juni  2023"
-                    description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
+                    description="Joglo Kopi Jolotundo"
+                    subdescription="Sogan, Wates, Kulon Progo, D.I.Yogyakarta"
                     link="https://goo.gl/maps/Htf1ffVCu8mgbXx5A"
                     fromLeft={false}
                   />
@@ -68,22 +69,21 @@ function WeddingSection({ isInvitation, location, hideGift }) {
                     title="Akad & Walimah"
                     day="Sabtu"
                     date="24  Juni  2023"
-                    description="Joglo Kopi Jolotundo<br/><small>Sogan, Wates, Kulon Progo, D.I.Yogyakarta</small>"
+                    description="Joglo Kopi Jolotundo"
+                    subdescription="Sogan, Wates, Kulon Progo, D.I.Yogyakarta"
                     fromLeft={false}
                   />
                 }
-                {(!isUnduhMantu || isUnduhMantu) &&
-                  <WeddingInfoBox
-                    key="NgunduhMantu"
-                    title="Ngunduh Mantu"
-                    time="10.00 - 18.00 WIB"
-                    day="Sabtu"
-                    date="08  Juli  2023"
-                    description="Waroeng Pondok Bambu<br/><small>Jalan Kebun Kopi Marindal 1
-                    Kec. Patumbak, Deli Serdang, Sumut</small>"
-                    link="https://goo.gl/maps/8RU5NXfahGzhzZfU9"
-                  />
-                }
+                <WeddingInfoBox
+                  key="NgunduhMantu"
+                  title="Ngunduh Mantu"
+                  time="10.00 - 18.00 WIB"
+                  day="Sabtu"
+                  date="08  Juli  2023"
+                  description="Waroeng Pondok Bambu"
+                  subdescription="Jalan Kebun Kopi Marindal 1 Kec. Patumbak, Deli Serdang, Sumut"
+                  link="https://goo.gl/maps/8RU5NXfahGzhzZfU9"
+                />
               </div>
             </div>
           </div>

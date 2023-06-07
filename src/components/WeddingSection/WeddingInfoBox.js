@@ -2,7 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 import { useInView, animated } from '@react-spring/web'
 
-function WeddingInfoBox({ title, date, time, day, description, link, fromLeft = true }) {
+function WeddingInfoBox({ title, date, time, day, description, subdescription, link, fromLeft = true }) {
 
   const [ref1, animate1] = useInView(
     () => ({
@@ -42,8 +42,10 @@ function WeddingInfoBox({ title, date, time, day, description, link, fromLeft = 
         }
 
         <div className="event-col">
-          <span className='text-center w-100 place' dangerouslySetInnerHTML={{__html: description}}>
-          </span>
+          <div className='text-center w-100 place'>
+            {description}<br/>
+            <small>{subdescription}</small>
+          </div>
         </div>
         {link && (
           <div className="row justify-center mt-4">
