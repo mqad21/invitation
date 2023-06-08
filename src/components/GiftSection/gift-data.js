@@ -9,7 +9,7 @@ export const gifts = [
     },
     {
         accountName: 'a.n. Laila Azzamah Ibda Nafisa (0812-6074-3660)',
-        accountNumber: 'Jalan Statistik I No. B8, Komplek Statistik BPS, Duren Sawit, Jakarta Timur',
+        accountNumber: 'Komplek Statistik Pondok Bambu Jalan Statistik 1, No. B8 RT 15 RW 7, Duren Sawit, Jakarta Timur',
         logo: Gift
     }
 ];
