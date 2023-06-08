@@ -66,7 +66,7 @@ function GiftSection() {
               <div className="row justify-center">
                 <div className="col-md-10 text-center fh5co-heading">
                   <p className="info">
-                    Mendoakan kebaikan adalah sebaik-baiknya hadiah. Doa restu dari keluarga, sahabat, serta rekan-rekan semua merupakan hadiah terbaik untuk pernikahan kami. Kehadiran keluarga, sahabat, serta rekan-rekan sudah cukup membuat kami merasa beruntung.  Namun, apabila memberi materi merupakan tanda kasih, kami tidak bisa lebih bersyukur menerimanya dan tentu semakin melengkapi kebahagiaan kami.
+                    Doa restu dari keluarga, sahabat, serta rekan-rekan semua merupakan hadiah terbaik untuk pernikahan kami. Kehadiran keluarga, sahabat, serta rekan-rekan sudah cukup membuat kami merasa beruntung.  Namun, apabila memberi merupakan tanda kasih, kami sangat bersyukur menerimanya dan tentu semakin melengkapi kebahagiaan kami.
                   </p>
                   {/* Button Beri Hadiah */}
                   <a onClick={toggleGift} className="btn btn-primary btn-gift">

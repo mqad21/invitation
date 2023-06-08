@@ -1,5 +1,5 @@
 import BRI from '@assets/images/bri.png';
-import BSI from '@assets/images/bsi.png';
+import Gift from '@assets/images/gift.png';
 
 export const gifts = [
     {
@@ -8,8 +8,8 @@ export const gifts = [
         logo: BRI
     },
     {
-        accountName: 'a.n. Muhammad Qadri',
-        accountNumber: '686-2178-090',
-        logo: BSI
+        accountName: 'a.n. Laila Azzamah Ibda Nafisa (0812-6074-3660)',
+        accountNumber: 'Jalan Statistik I No. B8, Komplek Statistik BPS, Duren Sawit, Jakarta Timur',
+        logo: Gift
     }
 ];

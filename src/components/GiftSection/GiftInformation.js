@@ -19,7 +19,7 @@ function GiftInformation({ accountNumber, accountName, logo }) {
                 <img width="100%" src={logo} alt="Logo"></img>
             </div>
             <div className="account col-7 col-md-8 my-auto">
-                <h3>{accountNumber}</h3>
+                <h3 class="account-name">{accountNumber}</h3>
                 <p>{accountName}</p>
             </div>
             <div className="col-3 my-auto">
