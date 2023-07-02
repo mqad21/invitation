@@ -3,6 +3,7 @@ import React from 'react';
 
 import Bride from '@assets/images/laila_square.jpg';
 import Groom from '@assets/images/qadri_square.jpg';
+
 import getQueryValue from '@helpers/getQueryValue';
 
 import { animated, useInView } from '@react-spring/web';
@@ -10,7 +11,7 @@ import { useEffect, useState } from 'react';
 import { styWrapper } from './styles';
 
 function HelloSection({ location, hideGift }) {
-  const finalSubtitle = '24 . 06 . 23';
+  const finalSubtitle = '08 . 07 . 23';
 
   const [showTitle, setShowTitle] = useState(false)
 
@@ -76,21 +77,21 @@ function HelloSection({ location, hideGift }) {
                 <h2 className="main-font main-font-salam">Assalamu'a'laikum warahmatullahi wabarakatuh</h2>
                 <h3 className="sub-title hs">{finalSubtitle}</h3>
                 <p className="info">
-                  Dengan memohon Rahmat dan Ridha Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a restu Bapak/Ibu/Saudara/i agar senantiasa diberikan kelancaran dan keberkahan dalam rangka melangsungkan pernikahan {hideGift ? 'anak kami' : 'kami'}:
+                  Dengan memohon Rahmat dan Ridha Allah ﷻ, teriring niat menjalankan Sunnah Rasulullah ﷺ untuk membentuk rumah tangga yang Sakinah, Mawaddah wa Rahmah, kami mohon do'a restu Bapak/Ibu/Saudara/i agar senantiasa diberikan kelancaran dan keberkahan dalam rangka melangsungkan acara ngunduh mantu {hideGift ? 'anak kami' : 'kami'}:
                 </p>
               </animated.div>
             </div>
             <div className="couple-wrap">
               <animated.div ref={ref2} style={animate2} className="couple-half">
                 <div className="groom">
-                  <img src={Bride} alt="groom" className="img-responsive" loading="lazy" />
+                  <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
                 </div>
                 <div className="desc-groom glassmorphism">
-                  <h3 className="main-font">Laila Azzamah Ibda Nafisa<span className="title">, S.Tr.Stat</span></h3>
-                  <p className="parent-name parent-name__top">
-                    Putri Bapak Mutijo<span className="title">, S.Si., M.Si.</span> &<br />Ibu Wahyu Wijayanti<span className="title">, S.Pd.</span><br />
+                  <h3 className="main-font">Muhammad Qadri<span className="title">, S.Tr.Stat</span></h3>
+                  <p className="parent-name">
+                    Putra Bapak <span className="title">Drs. </span>Muhammad Amin &<br />Ibu <span className="title">Dra. </span>Fauziah<br />
                     <small>
-                      <i>Kularan, Triharjo, Wates, Kulon Progo, D.I.Yogyakarta</i>
+                      <i>Marindal I, Patumbak, Deli Serdang, Sumatera Utara</i>
                     </small>
                   </p>
                 </div>
@@ -103,14 +104,14 @@ function HelloSection({ location, hideGift }) {
               </div>
               <animated.div ref={ref3} style={animate3} className="couple-half">
                 <div className="bride">
-                  <img src={Groom} alt="groom" className="img-responsive" loading="lazy" />
+                  <img src={Bride} alt="bride" className="img-responsive" loading="lazy" />
                 </div>
                 <div className="desc-bride glassmorphism">
-                  <h3 className="main-font">Muhammad Qadri<span className="title">, S.Tr.Stat</span></h3>
-                  <p className="parent-name">
-                    Putra Bapak <span className="title">Drs. </span>Muhammad Amin &<br />Ibu <span className="title">Dra. </span>Fauziah<br />
+                  <h3 className="main-font">Laila Azzamah Ibda Nafisa<span className="title">, S.Tr.Stat</span></h3>
+                  <p className="parent-name parent-name__top">
+                    Putri Bapak Mutijo<span className="title">, S.Si., M.Si.</span> &<br />Ibu Wahyu Wijayanti<span className="title">, S.Pd.</span><br />
                     <small>
-                      <i>Marindal I, Patumbak, Deli Serdang, Sumatera Utara</i>
+                      <i>Kularan, Triharjo, Wates, Kulon Progo, D.I.Yogyakarta</i>
                     </small>
                   </p>
                 </div>

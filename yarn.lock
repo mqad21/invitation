@@ -1294,6 +1294,13 @@
   "resolved" "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"
   "version" "0.8.0"
 
+"@emotion/is-prop-valid@^0.8.2":
+  "integrity" "sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA=="
+  "resolved" "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
+  "version" "0.8.8"
+  dependencies:
+    "@emotion/memoize" "0.7.4"
+
 "@emotion/memoize@0.7.4":
   "integrity" "sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw=="
   "resolved" "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz"
@@ -1627,6 +1634,59 @@
   "resolved" "https://registry.npmjs.org/@mikaelkristiansson/domready/-/domready-1.0.11.tgz"
   "version" "1.0.11"
 
+"@motionone/animation@^10.15.1":
+  "integrity" "sha512-mZcJxLjHor+bhcPuIFErMDNyrdb2vJur8lSfMCsuCB4UyV8ILZLvK+t+pg56erv8ud9xQGK/1OGPt10agPrCyQ=="
+  "resolved" "https://registry.npmjs.org/@motionone/animation/-/animation-10.15.1.tgz"
+  "version" "10.15.1"
+  dependencies:
+    "@motionone/easing" "^10.15.1"
+    "@motionone/types" "^10.15.1"
+    "@motionone/utils" "^10.15.1"
+    "tslib" "^2.3.1"
+
+"@motionone/dom@^10.15.3":
+  "integrity" "sha512-bnuHdNbge1FutZXv+k7xub9oPWcF0hsu8y1HTH/qg6av58YI0VufZ3ngfC7p2xhMJMnoh0LXFma2EGTgPeCkeg=="
+  "resolved" "https://registry.npmjs.org/@motionone/dom/-/dom-10.16.2.tgz"
+  "version" "10.16.2"
+  dependencies:
+    "@motionone/animation" "^10.15.1"
+    "@motionone/generators" "^10.15.1"
+    "@motionone/types" "^10.15.1"
+    "@motionone/utils" "^10.15.1"
+    "hey-listen" "^1.0.8"
+    "tslib" "^2.3.1"
+
+"@motionone/easing@^10.15.1":
+  "integrity" "sha512-6hIHBSV+ZVehf9dcKZLT7p5PEKHGhDwky2k8RKkmOvUoYP3S+dXsKupyZpqx5apjd9f+php4vXk4LuS+ADsrWw=="
+  "resolved" "https://registry.npmjs.org/@motionone/easing/-/easing-10.15.1.tgz"
+  "version" "10.15.1"
+  dependencies:
+    "@motionone/utils" "^10.15.1"
+    "tslib" "^2.3.1"
+
+"@motionone/generators@^10.15.1":
+  "integrity" "sha512-67HLsvHJbw6cIbLA/o+gsm7h+6D4Sn7AUrB/GPxvujse1cGZ38F5H7DzoH7PhX+sjvtDnt2IhFYF2Zp1QTMKWQ=="
+  "resolved" "https://registry.npmjs.org/@motionone/generators/-/generators-10.15.1.tgz"
+  "version" "10.15.1"
+  dependencies:
+    "@motionone/types" "^10.15.1"
+    "@motionone/utils" "^10.15.1"
+    "tslib" "^2.3.1"
+
+"@motionone/types@^10.15.1":
+  "integrity" "sha512-iIUd/EgUsRZGrvW0jqdst8st7zKTzS9EsKkP+6c6n4MPZoQHwiHuVtTQLD6Kp0bsBLhNzKIBlHXponn/SDT4hA=="
+  "resolved" "https://registry.npmjs.org/@motionone/types/-/types-10.15.1.tgz"
+  "version" "10.15.1"
+
+"@motionone/utils@^10.15.1":
+  "integrity" "sha512-p0YncgU+iklvYr/Dq4NobTRdAPv9PveRDUXabPEeOjBLSO/1FNB2phNTZxOxpi1/GZwYpAoECEa0Wam+nsmhSw=="
+  "resolved" "https://registry.npmjs.org/@motionone/utils/-/utils-10.15.1.tgz"
+  "version" "10.15.1"
+  dependencies:
+    "@motionone/types" "^10.15.1"
+    "hey-listen" "^1.0.8"
+    "tslib" "^2.3.1"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -1688,6 +1748,138 @@
     "art" "^0.10.3"
     "invariant" "^2.2.4"
     "prop-types" "^15.7.2"
+
+"@react-spring/animated@~9.6.1":
+  "integrity" "sha512-ls/rJBrAqiAYozjLo5EPPLLOb1LM0lNVQcXODTC1SMtS6DbuBCPaKco5svFUQFMP2dso3O+qcC4k9FsKc0KxMQ=="
+  "resolved" "https://registry.npmjs.org/@react-spring/animated/-/animated-9.6.1.tgz"
+  "version" "9.6.1"
+  dependencies:
+    "@react-spring/shared" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
+
+"@react-spring/animated@~9.7.2":
+  "integrity" "sha512-ipvleJ99ipqlnHkz5qhSsgf/ny5aW0ZG8Q+/2Oj9cI7LCc7COdnrSO6V/v8MAX3JOoQNzfz6dye2s5Pt5jGaIA=="
+  "resolved" "https://registry.npmjs.org/@react-spring/animated/-/animated-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/shared" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
+
+"@react-spring/core@~9.6.1":
+  "integrity" "sha512-3HAAinAyCPessyQNNXe5W0OHzRfa8Yo5P748paPcmMowZ/4sMfaZ2ZB6e5x5khQI8NusOHj8nquoutd6FRY5WQ=="
+  "resolved" "https://registry.npmjs.org/@react-spring/core/-/core-9.6.1.tgz"
+  "version" "9.6.1"
+  dependencies:
+    "@react-spring/animated" "~9.6.1"
+    "@react-spring/rafz" "~9.6.1"
+    "@react-spring/shared" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
+
+"@react-spring/core@~9.7.1", "@react-spring/core@~9.7.2":
+  "integrity" "sha512-fF512edZT/gKVCA90ZRxfw1DmELeVwiL4OC2J6bMUlNr707C0h4QRoec6DjzG27uLX2MvS1CEatf9KRjwZR9/w=="
+  "resolved" "https://registry.npmjs.org/@react-spring/core/-/core-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/animated" "~9.7.2"
+    "@react-spring/rafz" "~9.7.2"
+    "@react-spring/shared" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
+
+"@react-spring/konva@~9.7.1":
+  "integrity" "sha512-xMA0XkIyv02euso8BGlLA4iXVJ76p6WCjABMTjdvcp//KvIub596vLwoLzmqHYjqRhH7BP4UQKxzhHvM7AylQA=="
+  "resolved" "https://registry.npmjs.org/@react-spring/konva/-/konva-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/animated" "~9.7.2"
+    "@react-spring/core" "~9.7.2"
+    "@react-spring/shared" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
+
+"@react-spring/native@~9.7.1":
+  "integrity" "sha512-Ltq/F+4jY7aqHW1/f1xUb+e3XGbVxnllXfDYU+3nXi4sa7O+du755hpNbCHJ5ZgtkQYFKtQ7I+InTY+CDXPYfw=="
+  "resolved" "https://registry.npmjs.org/@react-spring/native/-/native-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/animated" "~9.7.2"
+    "@react-spring/core" "~9.7.2"
+    "@react-spring/shared" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
+
+"@react-spring/rafz@~9.6.1":
+  "integrity" "sha512-v6qbgNRpztJFFfSE3e2W1Uz+g8KnIBs6SmzCzcVVF61GdGfGOuBrbjIcp+nUz301awVmREKi4eMQb2Ab2gGgyQ=="
+  "resolved" "https://registry.npmjs.org/@react-spring/rafz/-/rafz-9.6.1.tgz"
+  "version" "9.6.1"
+
+"@react-spring/rafz@~9.7.2":
+  "integrity" "sha512-kDWMYDQto3+flkrX3vy6DU/l9pxQ4TVW91DglQEc11iDc7shF4+WVDRJvOVLX+xoMP7zyag1dMvlIgvQ+dvA/A=="
+  "resolved" "https://registry.npmjs.org/@react-spring/rafz/-/rafz-9.7.2.tgz"
+  "version" "9.7.2"
+
+"@react-spring/shared@~9.6.1":
+  "integrity" "sha512-PBFBXabxFEuF8enNLkVqMC9h5uLRBo6GQhRMQT/nRTnemVENimgRd+0ZT4yFnAQ0AxWNiJfX3qux+bW2LbG6Bw=="
+  "resolved" "https://registry.npmjs.org/@react-spring/shared/-/shared-9.6.1.tgz"
+  "version" "9.6.1"
+  dependencies:
+    "@react-spring/rafz" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
+
+"@react-spring/shared@~9.7.2":
+  "integrity" "sha512-6U9qkno+9DxlH5nSltnPs+kU6tYKf0bPLURX2te13aGel8YqgcpFYp5Av8DcN2x3sukinAsmzHUS/FRsdZMMBA=="
+  "resolved" "https://registry.npmjs.org/@react-spring/shared/-/shared-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/rafz" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
+
+"@react-spring/three@~9.7.1":
+  "integrity" "sha512-u7VAjc+az82PM+WOC2sTbZQLBixuN+0jX/oahzyjEnIds5eUJgaBqZRYAAEMupuzGGl8H3QqL3bFgBEQLq6ADQ=="
+  "resolved" "https://registry.npmjs.org/@react-spring/three/-/three-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/animated" "~9.7.2"
+    "@react-spring/core" "~9.7.2"
+    "@react-spring/shared" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
+
+"@react-spring/types@~9.6.1":
+  "integrity" "sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q=="
+  "resolved" "https://registry.npmjs.org/@react-spring/types/-/types-9.6.1.tgz"
+  "version" "9.6.1"
+
+"@react-spring/types@~9.7.2":
+  "integrity" "sha512-GEflx2Ex/TKVMHq5g5MxQDNNPNhqg+4Db9m7+vGTm8ttZiyga7YQUF24shgRNebKIjahqCuei16SZga8h1pe4g=="
+  "resolved" "https://registry.npmjs.org/@react-spring/types/-/types-9.7.2.tgz"
+  "version" "9.7.2"
+
+"@react-spring/web@^9.6.1":
+  "integrity" "sha512-X2zR6q2Z+FjsWfGAmAXlQaoUHbPmfuCaXpuM6TcwXPpLE1ZD4A1eys/wpXboFQmDkjnrlTmKvpVna1MjWpZ5Hw=="
+  "resolved" "https://registry.npmjs.org/@react-spring/web/-/web-9.6.1.tgz"
+  "version" "9.6.1"
+  dependencies:
+    "@react-spring/animated" "~9.6.1"
+    "@react-spring/core" "~9.6.1"
+    "@react-spring/shared" "~9.6.1"
+    "@react-spring/types" "~9.6.1"
+
+"@react-spring/web@~9.7.1":
+  "integrity" "sha512-7qNc7/5KShu2D05x7o2Ols2nUE7mCKfKLaY2Ix70xPMfTle1sZisoQMBFgV9w/fSLZlHZHV9P0uWJqEXQnbV4Q=="
+  "resolved" "https://registry.npmjs.org/@react-spring/web/-/web-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/animated" "~9.7.2"
+    "@react-spring/core" "~9.7.2"
+    "@react-spring/shared" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
+
+"@react-spring/zdog@~9.7.1":
+  "integrity" "sha512-6z2qqhmbpoZrw1oThyn4zfejtLkuadsaZFVMFf/5l5cHTEdRC8HZsBRLo+Wiomkprg/F1hyhcXI5X1lJ+T/zdQ=="
+  "resolved" "https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.7.2.tgz"
+  "version" "9.7.2"
+  dependencies:
+    "@react-spring/animated" "~9.7.2"
+    "@react-spring/core" "~9.7.2"
+    "@react-spring/shared" "~9.7.2"
+    "@react-spring/types" "~9.7.2"
 
 "@sideway/address@^4.1.3":
   "integrity" "sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw=="
@@ -5863,6 +6055,17 @@
   dependencies:
     "map-cache" "^0.2.2"
 
+"framer-motion@^7.10.3":
+  "integrity" "sha512-k2ccYeZNSpPg//HTaqrU+4pRq9f9ZpaaN7rr0+Rx5zA4wZLbk547wtDzge2db1sB+1mnJ6r59P4xb+aEIi/W+w=="
+  "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-7.10.3.tgz"
+  "version" "7.10.3"
+  dependencies:
+    "@motionone/dom" "^10.15.3"
+    "hey-listen" "^1.0.8"
+    "tslib" "2.4.0"
+  optionalDependencies:
+    "@emotion/is-prop-valid" "^0.8.2"
+
 "fresh@0.5.2":
   "integrity" "sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q=="
   "resolved" "https://registry.npmjs.org/fresh/-/fresh-0.5.2.tgz"
@@ -6854,6 +7057,11 @@
   "integrity" "sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ=="
   "resolved" "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
   "version" "1.1.0"
+
+"hey-listen@^1.0.8":
+  "integrity" "sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q=="
+  "resolved" "https://registry.npmjs.org/hey-listen/-/hey-listen-1.0.8.tgz"
+  "version" "1.0.8"
 
 "hicat@^0.8.0":
   "integrity" "sha512-om8L9O5XwqeSdwl5NtHgrzK3wcF4fT9T4gb/NktoH8EyoZipas/tvUZLV48xT7fQfMYr9qvb0WEutqdf0LWSqA=="
@@ -10663,6 +10871,11 @@
     "minimist" "^1.2.0"
     "strip-json-comments" "~2.0.1"
 
+"react-animations@^1.0.0":
+  "integrity" "sha512-ePPpVgdKnNEXm+LP1ww5s3n0JzebBw9QdRfxRqogzeg1PDIn6kf0pmvgeTeVZQXXpGmHImkIeTiaQR1O6xjntA=="
+  "resolved" "https://registry.npmjs.org/react-animations/-/react-animations-1.0.0.tgz"
+  "version" "1.0.0"
+
 "react-dev-utils@^4.2.3":
   "integrity" "sha512-uvmkwl5uMexCmC0GUv1XGQP0YjfYePJufGg4YYiukhqk2vN1tQxwWJIBERqhOmSi80cppZg8mZnPP/kOMf1sUQ=="
   "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-4.2.3.tgz"
@@ -10687,7 +10900,7 @@
     "strip-ansi" "3.0.1"
     "text-table" "0.2.0"
 
-"react-dom@^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^16.1.1", "react-dom@^16.12.0", "react-dom@^16.4.2 || ^17.0.0", "react-dom@15.x || 16.x || 16.4.0-alpha.0911da3":
+"react-dom@^15.0.0 || ^16.0.0 || ^17.0.0", "react-dom@^16.1.1", "react-dom@^16.12.0", "react-dom@^16.4.2 || ^17.0.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.0.0", "react-dom@15.x || 16.x || 16.4.0-alpha.0911da3":
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -10846,7 +11059,19 @@
   "resolved" "https://registry.npmjs.org/react-side-effect/-/react-side-effect-2.1.2.tgz"
   "version" "2.1.2"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.1.1", "react@^16.12.0", "react@^16.14.0", "react@^16.3.0 || ^17.0.0 || ^18.0.0", "react@^16.4.2 || ^17.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.x || ^17.x", "react@>=15 || ^0.14.7", "react@>=16.3.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3", "react@18.2.0":
+"react-spring@^9.7.1":
+  "integrity" "sha512-o2+r2DNQDVEuefiz33ZF76DPd/gLq3kbdObJmllGF2IUfv2W6x+ZP0gR97QYCSR4QLbmOl1mPKUBbI+FJdys2Q=="
+  "resolved" "https://registry.npmjs.org/react-spring/-/react-spring-9.7.1.tgz"
+  "version" "9.7.1"
+  dependencies:
+    "@react-spring/core" "~9.7.1"
+    "@react-spring/konva" "~9.7.1"
+    "@react-spring/native" "~9.7.1"
+    "@react-spring/three" "~9.7.1"
+    "@react-spring/web" "~9.7.1"
+    "@react-spring/zdog" "~9.7.1"
+
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.1.1", "react@^16.12.0", "react@^16.14.0", "react@^16.3.0 || ^17.0.0 || ^18.0.0", "react@^16.4.2 || ^17.0.0", "react@^16.8.0  || >=17.0.0 || >=18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.x || ^17.x", "react@^18.0.0", "react@>=15 || ^0.14.7", "react@>=16.3.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3", "react@18.2.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
@@ -12623,6 +12848,11 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.5.2.tgz"
   "version" "2.5.2"
 
+"tslib@^2.3.1":
+  "integrity" "sha512-mSxlJJwl3BMEQCUNnxXBU9jP4JBktcEGhURcPR6VQVlnP0FdDEsIaz0C35dXNGLyRfrATNofF0F5p2KPxQgB+w=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.5.3.tgz"
+  "version" "2.5.3"
+
 "tslib@^2", "tslib@^2.4.0":
   "integrity" "sha512-5svOrSA2w3iGFDs1HibEVBGbDrAY82bFQ3HZ3ixB+88nsbsWQoKqDRb5UBYAUPEzbBn6dAp5gRNXglySbx1MlA=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.5.2.tgz"
@@ -12642,6 +12872,11 @@
   "integrity" "sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.2.0.tgz"
   "version" "2.2.0"
+
+"tslib@2.4.0":
+  "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
+  "version" "2.4.0"
 
 "tsutils@^3.17.1":
   "integrity" "sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA=="

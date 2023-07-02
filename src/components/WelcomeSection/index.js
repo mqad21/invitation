@@ -113,8 +113,8 @@ function WelcomeSection({ guestName, isAnonymGuest, onClickDetail, showDetailCon
               <div className="col-12 text-center">
                 <animated.div style={animate1}>
                   <img src={WeddingImg} alt="wedding-dinda-indra" />
-                  <h4 className="sub-title">Walimatul 'Urs</h4>
-                  <h1 className="title">Laila &amp; Qadri</h1>
+                  <h4 className="sub-title">Ngunduh Mantu</h4>
+                  <h1 className="title">Qadri &amp; Laila</h1>
                 </animated.div>
                 <animated.div style={animate3} className={isAnonymGuest ? 'margin__bottom' : ''}>
                   <CountContainer />

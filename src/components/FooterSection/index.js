@@ -44,7 +44,7 @@ function FooterSection({ isInvitation, hideGift }) {
                     <div className="col-md-12 text-center">
                       <p>
                         <img src={LQ} alt="lq" width="250" />
-                        <small className="block">&copy; 2023 Laila & Qadri. All Rights Reserved.</small>
+                        <small className="block">&copy; 2023 Qadri & Laila. All Rights Reserved.</small>
                         <small className="block">
                           Sound by{' '}
                           <a href="https://www.youtube.com/watch?v=aTp-PfeZQ-g&pp=ygUXaW5zdHJ1bWVudCBjaW50YW55YSBha3U%3D" target="_blank" rel="noreferrer">

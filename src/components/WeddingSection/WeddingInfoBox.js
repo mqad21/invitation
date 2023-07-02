@@ -30,7 +30,7 @@ function WeddingInfoBox({ title, date, time, day, description, subdescription, l
         </div>
 
         <div className="event-col">
-          <p className="text-center w-100 mb-0 date">{date}</p>
+          <p className={"text-center w-100 mb-0 date " + (!time ? 'unduh' : '')}>{date}</p>
         </div>
 
         {
@@ -43,7 +43,7 @@ function WeddingInfoBox({ title, date, time, day, description, subdescription, l
 
         <div className="event-col">
           <div className='text-center w-100 place'>
-            {description}<br/>
+            {description}<br />
             <small>{subdescription}</small>
           </div>
         </div>

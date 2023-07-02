@@ -7,7 +7,8 @@ import getQueryValue from '@helpers/getQueryValue';
 import { useInView, animated } from '@react-spring/web'
 
 function WeddingSection({ isInvitation, location, hideGift }) {
-  const isUnduhMantu = decodeURIComponent(getQueryValue(location, 'u') || '') === '1';
+  // const isUnduhMantu = decodeURIComponent(getQueryValue(location, 'u') || '') === '1';
+  const isUnduhMantu = true;
 
   const [ref0, animate0] = useInView(
     () => ({
@@ -33,7 +34,7 @@ function WeddingSection({ isInvitation, location, hideGift }) {
           <div className="row justify-center">
             <animated.div ref={ref0} style={animate0} className="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <div className="bismillah">بسم الله الرحمن الرحيم</div>
-              <span className="sub-title sub-title__wedding">Tanpa mengurangi rasa hormat, dengan ini kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan {hideGift ? 'anak kami' : 'kami'} yang Insyaa Allah akan diselenggarakan pada:</span>
+              <span className="sub-title sub-title__wedding">Tanpa mengurangi rasa hormat, dengan ini kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara ngunduh mantu {hideGift ? 'anak kami' : 'kami'} yang Insyaa Allah akan diselenggarakan pada:</span>
             </animated.div>
           </div>
           <div className="row justify-center">
